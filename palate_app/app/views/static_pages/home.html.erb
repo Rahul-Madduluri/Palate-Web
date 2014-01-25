@@ -1,10 +1,30 @@
 <% provide(:title, 'Home') %>
 <!DOCTYPE html>
 <html>
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
 	<div class="center hero-unit">
  		<img src="http://s29.postimg.org/gnb20g9g7/logo.png" height="100" width="100">
   		<img src="http://s1.postimg.org/vsyboos0f/name_logo.png" height="100" width="240">
   		<p>taste the future.</p>
   		<%= link_to "Sign up now!", signup_path , class: "btn btn-large btn-primary" %>
   	</div>
- </html>
+<% end %>
+</html>
