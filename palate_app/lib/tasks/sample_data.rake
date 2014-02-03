@@ -1,9 +1,12 @@
+require "#{Rails.root}/app/helpers/movies_helper"
+include MoviesHelper
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
     make_users
     make_microposts
     make_relationships
+    make_movies
   end
 end
 
@@ -39,6 +42,10 @@ def make_relationships
   followers      = users[3..40]
   followed_users.each { |followed| user.follow!(followed) }
   followers.each      { |follower| follower.follow!(user) }
+end
+
+def make_movies
+  preset_movies
 end
 
 

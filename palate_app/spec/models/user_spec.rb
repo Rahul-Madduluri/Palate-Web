@@ -26,6 +26,11 @@ describe User do
   it { should respond_to(:unfollow!) }
   it { should respond_to(:reverse_relationships) }
   it { should respond_to(:followers) }
+  it { should respond_to(:adventurousness_affinity) }
+  it { should respond_to(:instinctiveness_affinity) }
+  it { should respond_to(:pace_affinity) }
+  it { should respond_to(:valence_affinity) }
+  it { should respond_to(:freshness_affinity) }
 
 
 

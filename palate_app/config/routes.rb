@@ -8,12 +8,19 @@ PalateApp::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
-  resources :movies, only: [:new, :create, :destroy]
+
+  resources :movies do
+    member do
+      get :firstbite
+      get :update_user
+    end
+  end
 
   root  'static_pages#home'
   match '/signup', to: 'users#new',    via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout',to: 'sessions#destroy', via: 'delete'
+  match '/update_user_with_movie', to: 'movies#update_user', via: 'get'
   get '/questionnaire' => 'movies#firstbite', as: 'firstbite'
 
   

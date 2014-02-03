@@ -50,5 +50,53 @@ module MoviesHelper
 		@movie
 	end
 
+	def preset_movies
+		  search_movie_and_create_without_metrics('Rear Window', 1954)
+		  search_movie_and_create_without_metrics('Saw', 2004)
+		  search_movie_and_create_without_metrics('The Good, the Bad, and the Ugly', 1966) 
+		  search_movie_and_create_without_metrics('Casino Royale', 2006)
+		  search_movie_and_create_without_metrics("Pan\'s Labyrinth", 2006)
+		  search_movie_and_create_without_metrics('Gladiator', 2000)
+		  search_movie_and_create_without_metrics('Fight Club', 1999)
+		  search_movie_and_create_without_metrics('Slumdog Millionaire', 2008)
+		  search_movie_and_create_without_metrics('Die Hard', 1988)
+		  search_movie_and_create_without_metrics('The Sixth Sense', 1999)
+		  search_movie_and_create_without_metrics('The Silence of the Lambs', 1991)
+		  search_movie_and_create_without_metrics('Forgetting Sarah Marshall', 2008)
+		  search_movie_and_create_without_metrics('The Wizard of Oz', 1939)
+		  search_movie_and_create_without_metrics('Star Wars', 1977)
+		  search_movie_and_create_without_metrics('When Harry Met Sally', 1989)
+		  search_movie_and_create_without_metrics('Devil Wears Prada', 2006)
+		  search_movie_and_create_without_metrics('The Help', 2011)
+		  search_movie_and_create_without_metrics("Ocean\'s Eleven", 2001)
+		  search_movie_and_create_without_metrics('Flight', 2012)
+		  search_movie_and_create_without_metrics('Unforgiven', 1992) 
+		  search_movie_and_create_without_metrics('Superbad', 2007)
+		  search_movie_and_create_without_metrics('WALL-E', 2008)
+		  search_movie_and_create_without_metrics('The Matrix', 1999) 
+		  search_movie_and_create_without_metrics('Titanic', 1997)
+		  search_movie_and_create_without_metrics("Happy Gilmore", 1996)
+		  search_movie_and_create_without_metrics('Memento', 2000)
+		  search_movie_and_create_without_metrics('The Godfather', 1972)
+		  search_movie_and_create_without_metrics('The Avengers', 2012)
+		  search_movie_and_create_without_metrics('The Incredibles', 2004)
+		  search_movie_and_create_without_metrics('The Notebook', 2004)
+		  search_movie_and_create_without_metrics('The Terminator', 1984)
+		  search_movie_and_create_without_metrics('Harry Potter and the Prisoner of Azkaban', 2004)
+		  search_movie_and_create_without_metrics('Pulp Fiction', 1994)
+		  search_movie_and_create_without_metrics('The Bourne Identity', 2002)
+		  search_movie_and_create_without_metrics('Knocked Up', 2007)
+		  search_movie_and_create_without_metrics('Bridesmaids', 2011)
+		  search_movie_and_create_without_metrics('The Blind Side', 2009)
+		  search_movie_and_create_without_metrics("Good Will Hunting", 1997)
+		  search_movie_and_create_without_metrics('Seven', 1995)
+		  search_movie_and_create_without_metrics('3:10 to Yuma', 2007)
+
+		  
+	end
+
+	
+
+
 end
 
