@@ -26,10 +26,13 @@ module MoviesHelper
 		instinctiveness=0
 		pace=0
 		valence=0
+
+		# add metric values of each genre associated with a movie and find average
 		aMovie.genres.each { |genre| genre_scores[:genre][:adventurousness]+=adventurousness}
 		aMovie.genres.each { |genre| genre_scores[:genre][:instinctiveness]+=instinctiveness}
 		aMovie.genres.each { |genre| genre_scores[:genre][:pace]+=pace}
 		aMovie.genres.each { |genre| genre_scores[:genre][:valence]+=valence}
+
 		adventurousness = adventurousness / aMovie.genres.count
 		instinctiveness = instinctiveness / aMovie.genres.count
 		pace = pace / aMovie.genres.count
