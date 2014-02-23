@@ -3,8 +3,7 @@ class MoviesController < ApplicationController
 
 	before_action :signed_in_user, only: [:create, :destroy]
 	before_action :correct_user,	only: :destroy
-	before_action :preset_firstbite, only: :update_user
-
+	before_action :next_bite,		only: :update_user
 
 
 
@@ -14,9 +13,9 @@ class MoviesController < ApplicationController
 	end
 
 	def firstbite
-		preset_firstbite
+		@allmovies = Movie.all.each_slice(2)
+		@presetmovies = @allmovies.next
 
-	   
 
 
 =begin
@@ -32,7 +31,7 @@ class MoviesController < ApplicationController
 	end
 
 	def update_user
-
+		
 		#MAKE THIS A FUNCTION IN THE MODEL
 		current_user.adventurousness_affinity = params[:adventurousness]
 		current_user.instinctiveness_affinity = params[:instinctiveness]
@@ -41,10 +40,11 @@ class MoviesController < ApplicationController
 		current_user.save
 
 
-		#@presetmovies = preset_firstbite
 
 		respond_to do |format|
-      		format.html  do
+      		format.html do
+      			#redirect_to firstbite_url
+      			firstbite
       			redirect_to firstbite_url
       		end
       		format.js
@@ -58,9 +58,9 @@ class MoviesController < ApplicationController
 			params.require(:movie).permit(:title, :year, :adventurousness, :instinctiveness, :pace, :valence, :freshness, :critics_rating, :url)
 	    end
 
-	    def preset_firstbite
-	    	list_of_preset_movies = Movie.all
-	    	@presetmovies = list_of_preset_movies.shift(2)
+
+	    def next_bite
+	    	@presetmovies = @allmovies.next
 	    end
 
 	 
