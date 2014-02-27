@@ -3,7 +3,6 @@ class MoviesController < ApplicationController
 
 	before_action :signed_in_user, only: [:create, :destroy]
 	before_action :correct_user,	only: :destroy
-	before_action :next_bite,		only: :update_user
 
 
 
@@ -17,7 +16,6 @@ class MoviesController < ApplicationController
 		@presetmovies = @allmovies.next
 
 
-
 =begin
 		respond_to do |format|
 	    	format.js
@@ -27,30 +25,12 @@ class MoviesController < ApplicationController
 
 	end
 
+
 	def destroy
 	end
 
-	def update_user
-		
-		#MAKE THIS A FUNCTION IN THE MODEL
-		current_user.adventurousness_affinity = params[:adventurousness]
-		current_user.instinctiveness_affinity = params[:instinctiveness]
-		current_user.pace_affinity = params[:pace]
-		current_user.valence_affinity = params[:valence]
-		current_user.save
 
 
-
-		respond_to do |format|
-      		format.html do
-      			#redirect_to firstbite_url
-      			firstbite
-      			redirect_to firstbite_url
-      		end
-      		format.js
-    	end
-
-	end
 
 
 	private
@@ -59,10 +39,7 @@ class MoviesController < ApplicationController
 	    end
 
 
-	    def next_bite
-	    	@presetmovies = @allmovies.next
-	    end
-
+	    
 	 
 
 

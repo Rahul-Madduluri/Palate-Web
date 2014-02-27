@@ -99,6 +99,10 @@ module MoviesHelper
 	end
 
 
+	def next_bite
+	    @presetmovies = @allmovies.next
+	end
+
 	
 
 

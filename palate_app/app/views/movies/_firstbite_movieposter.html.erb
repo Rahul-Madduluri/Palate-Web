@@ -1,3 +1,4 @@
 <% @presetmovies.each do |movie| %>
-	<%= link_to(image_tag(movie.url), :action => "update_user")  %>
+	<%= render 'user_firstbite_form', :movie => movie  %>
+	<% next_bite %>
 <% end %>
