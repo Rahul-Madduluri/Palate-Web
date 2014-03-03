@@ -23,11 +23,18 @@ class StaticPagesController < ApplicationController
 	end
 
 
-	private
+	def update_movie_attr
 
-		def next_bite
-		    @presetmovies = @allmovies.next
+		@movie = Movie.find(params[:id])
+
+		respond_to do |format|
+			format.js
+			format.html
 		end
+		
+	end
+
+
 
 
 

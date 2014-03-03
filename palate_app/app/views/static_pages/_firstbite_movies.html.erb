@@ -1,0 +1,54 @@
+<% @allmovies.each do |slice| %>
+	<div class = "firstbite_row">
+
+		<div class = "firstbite_movieposter" id = "first_poster">
+			<%= link_to image_tag(slice.at(0).url), {:controller => 'static_pages', :action => 'update_movie_attr', :id => slice.at(0).id}, :remote => true %>
+			<p class="movie_title"><%= slice.at(0).title %></p>
+		</div>
+
+
+
+		<div class = "firstbite_movieposter" id = "second_poster">
+			<%= link_to image_tag(slice.at(1).url), {:controller => 'static_pages', :action => 'update_movie_attr', :id => slice.at(1).id}, :remote => true %>
+			<p class="movie_title"><%= slice.at(1).title %></p>
+
+		</div>
+
+		<br>
+	</div>
+<% end %>
+
+<script type = "text/javascript">
+
+
+	$('.firstbite_movieposter').click( function() {
+
+		var div = $(this);
+
+		if (div.attr("id") == "first_poster")
+		{
+			
+			var second = $('#second_poster', $(this).parent());
+
+			$(second).fadeTo(500,.25);
+			$(this).fadeTo(500,1);
+
+			
+		}
+		else if (div.attr("id") == "second_poster")
+		{
+
+			var first = $('#first_poster', $(this).parent());
+
+			$(first).fadeTo(500,.25);
+			$(this).fadeTo(500,1);
+
+		}
+
+		
+	});
+
+
+
+</script>
+

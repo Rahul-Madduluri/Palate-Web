@@ -320,6 +320,46 @@ aside {
   top:80px;
 }
 
+
+/* firstbite */
+
+#firstbite_title {
+
+  font: bold 30px "Century Schoolbook", Georgia, Times, serif;
+  color: #333;
+  line-height: 90%;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 25px;
+  margin-bottom: 50px;
+
+  letter-spacing: -2px;
+
+
+
+}
+
+
+.movie_title:first-letter {
+  text-transform: uppercase;
+}
+
+.movie_title {
+
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  color: #424242;
+  font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+  letter-spacing:0.1em;
+  text-align:center;
+  margin: 10px auto;
+  text-transform: lowercase;
+  line-height: 145%;
+  font-size: 10pt;
+  font-variant: small-caps;
+
+
+}
+
 .firsbite_image {
   height: 150px;
   width: 150px;
@@ -327,9 +367,9 @@ aside {
 
 .firstbite_movieposter {
   display: inline-block;
-  margin-left: 175px;
+  margin-left: 25;
   margin-bottom: 100px;
-  margin-right: 100px;
+  margin-right: 175px;
 }
 
 .firstbite_row {

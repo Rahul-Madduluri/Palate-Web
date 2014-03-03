@@ -3,10 +3,10 @@ include MoviesHelper
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
+    make_movies
     make_users
     make_microposts
     make_relationships
-    make_movies
   end
 end
 
