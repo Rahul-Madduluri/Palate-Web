@@ -11,19 +11,6 @@ class MoviesController < ApplicationController
 		@movie = Movie.build(movie_params)
 	end
 
-	def firstbite
-		@allmovies = Movie.all.each_slice(2)
-		@presetmovies = @allmovies.next
-
-
-=begin
-		respond_to do |format|
-	    	format.js
-	    	format.html { redirect_to(root_url) }
-  		end
-=end
-
-	end
 
 
 	def destroy

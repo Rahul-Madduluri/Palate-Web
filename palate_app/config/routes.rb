@@ -10,16 +10,13 @@ PalateApp::Application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   resources :movies do
-    member do
-      get :firstbite
-    end
   end
 
   root  'static_pages#home'
   match '/signup', to: 'users#new',    via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout',to: 'sessions#destroy', via: 'delete'
-  get '/questionnaire' => 'movies#firstbite', as: 'firstbite'
+  get '/questionnaire' => 'static_pages#firstbite', as: 'firstbite'
 
   
   # The priority is based upon order of creation: first created -> highest priority.
