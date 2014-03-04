@@ -23,24 +23,24 @@
 <script type = "text/javascript">
 
 
-	$('.firstbite_movieposter').click( function() {
+	$('.movie_and_title').click( function() {
 
 		var div = $(this);
 
-		if (div.attr("id") == "first_poster")
+		if (div.attr("id") == "first_movie_and_title")
 		{
 			
-			var second = $('#second_movie_and_title', $(this).parent().parent());
+			var second = $('#second_movie_and_title', $(this).parent());
 
 			$(second).fadeTo(1000,.25);
 			$(this).fadeTo(1000,1);
 
 			
 		}
-		else if (div.attr("id") == "second_poster")
+		else if (div.attr("id") == "second_movie_and_title")
 		{
 
-			var first = $('#first_movie_and_title', $(this).parent().parent());
+			var first = $('#first_movie_and_title', $(this).parent());
 
 			$(first).fadeTo(1000,.25);
 			$(this).fadeTo(1000,1);

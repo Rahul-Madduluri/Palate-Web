@@ -356,6 +356,7 @@ aside {
 .firstbite_movieposter {
   height: 380px;
   width: 300px;
+
 }
 
 .firstbite_row {
@@ -365,7 +366,7 @@ aside {
   padding-bottom: 200px;
 }
 
-#movie_poster {
+#firstbite_background {
   margin-left: auto;
   margin-right: auto;
   background-image: -webkit-gradient(linear, center top, center bottom, from(#222222), to(white));
@@ -374,6 +375,8 @@ aside {
 .movie_image {
   zoom: 4;
   -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255,255,255,0.20)));
+ border:1px outset #ccc;
+ 
 }
 
 .movie_and_title {
@@ -382,6 +385,7 @@ aside {
   padding-right: 50px;
   height: 600px;
   width: 300px;
+
 }
 
 .movie_area {
