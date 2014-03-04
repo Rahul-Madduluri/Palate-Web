@@ -68,70 +68,46 @@ module MoviesHelper
 
 	def preset_movies
 
-
-
-
-
-		search_movie_and_create('Rear Window', 1954)
-		search_movie_and_create('Saw', 2004)
-		search_movie_and_create('The Good, the Bad, and the Ugly', 1966) 
-		search_movie_and_create('Casino Royale', 2006)
-
-
-		search_movie_and_create("Pan\'s Labyrinth", 2006)
-		search_movie_and_create('Gladiator', 2000)
-		search_movie_and_create('Fight Club', 1999)
 		search_movie_and_create('Slumdog Millionaire', 2008)
-		search_movie_and_create('Die Hard', 1988)
-
-
-
-
-		search_movie_and_create('The Sixth Sense', 1999)
-
-		search_movie_and_create('The Silence of the Lambs', 1991)
-
-		search_movie_and_create('Forgetting Sarah Marshall', 2008)
-		search_movie_and_create('The Wizard of Oz', 1939)
-		search_movie_and_create('Star Wars', 1977)
-		search_movie_and_create('When Harry Met Sally', 1989)
-		search_movie_and_create('Devil Wears Prada', 2006)
-		search_movie_and_create('The Help', 2011)
-		search_movie_and_create("Ocean\'s Eleven", 2001)
-		search_movie_and_create('Flight', 2012)
-		search_movie_and_create('Unforgiven', 1992) 
-		search_movie_and_create('Superbad', 2007)
-		search_movie_and_create('WALL-E', 2008)
-
-
-
-		search_movie_and_create('The Matrix', 1999) 
-
-		search_movie_and_create('Titanic', 1997)
-		search_movie_and_create("Happy Gilmore", 1996)
-		search_movie_and_create('Memento', 2000)
-
-		search_movie_and_create('The Godfather', 1972)
-
 		search_movie_and_create('The Avengers', 2012)
+		search_movie_and_create('Casino Royale', 2006)
+		search_movie_and_create('Titanic', 1997)
+		search_movie_and_create("Pan\'s Labyrinth", 2006)
+		search_movie_and_create("Happy Gilmore", 1996)
+		search_movie_and_create('Rear Window', 1954)
+		search_movie_and_create('Superbad', 2007)
+		search_movie_and_create('The Good, the Bad, and the Ugly', 1966) 
+		search_movie_and_create('The Matrix', 1999)
+		search_movie_and_create('Gladiator', 2000)
+		search_movie_and_create('Memento', 2000)
+		search_movie_and_create('Saw', 2004)
+		search_movie_and_create('WALL-E', 2008)
+		search_movie_and_create('Fight Club', 1999)
+		search_movie_and_create('The Godfather', 1972)
+		search_movie_and_create('Die Hard', 1988)
 		search_movie_and_create('The Incredibles', 2004)
+		search_movie_and_create('The Sixth Sense', 1999)
 		search_movie_and_create('The Notebook', 2004)
-
-
+		search_movie_and_create('The Silence of the Lambs', 1991)
 		search_movie_and_create('The Terminator', 1984)
+		search_movie_and_create('Forgetting Sarah Marshall', 2008)
 		search_movie_and_create('Harry Potter and the Prisoner of Azkaban', 2004)
+		search_movie_and_create('The Wizard of Oz', 1939)
 		search_movie_and_create('Pulp Fiction', 1994)
+		search_movie_and_create('Star Wars', 1977)
 		search_movie_and_create('The Bourne Identity', 2002)
+		search_movie_and_create('When Harry Met Sally', 1989)
 		search_movie_and_create('Knocked Up', 2007)
+		search_movie_and_create('Devil Wears Prada', 2006)
 		search_movie_and_create('Bridesmaids', 2011)
+		search_movie_and_create('The Help', 2011)
 		search_movie_and_create('The Blind Side', 2009)
+		search_movie_and_create("Ocean\'s Eleven", 2001)
 		search_movie_and_create("Good Will Hunting", 1997)
+		search_movie_and_create('Flight', 2012)
 		search_movie_and_create('Seven', 1995)
+		search_movie_and_create('Unforgiven', 1992) 
 		search_movie_and_create('3:10 to Yuma', 2007)
-
-		  
-	
-
 
 	end
 
