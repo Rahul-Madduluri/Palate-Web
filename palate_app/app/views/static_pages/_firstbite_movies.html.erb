@@ -30,7 +30,7 @@
 		if (div.attr("id") == "first_poster")
 		{
 			
-			var second = $('#second_poster', $(this).parent().parent());
+			var second = $('#second_movie_and_title', $(this).parent().parent());
 
 			$(second).fadeTo(1000,.25);
 			$(this).fadeTo(1000,1);
@@ -40,7 +40,7 @@
 		else if (div.attr("id") == "second_poster")
 		{
 
-			var first = $('#first_poster', $(this).parent().parent());
+			var first = $('#first_movie_and_title', $(this).parent().parent());
 
 			$(first).fadeTo(1000,.25);
 			$(this).fadeTo(1000,1);

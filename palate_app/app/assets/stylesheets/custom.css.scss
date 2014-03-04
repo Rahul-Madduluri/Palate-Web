@@ -324,7 +324,6 @@ aside {
 /* firstbite */
 
 #firstbite_title {
-
   font: bold 30px "Century Schoolbook", Georgia, Times, serif;
   color: #fff;
   line-height: 90%;
@@ -332,18 +331,13 @@ aside {
   margin-left: auto;
   padding-right: 5px;
   letter-spacing: -2px;
-
-
-
 }
-
 
 .movie_title:first-letter {
   text-transform: uppercase;
 }
 
 .movie_title {
-
   text-shadow: 2px 4px 3px ;
   color: #ffffff;
   font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
@@ -355,19 +349,13 @@ aside {
   line-height: 145%;
   font-size: 14pt;
   font-variant: small-caps;
-  padding-top: 400px;
-  
-
-
+  padding-top: 470px;
 }
 
 
 .firstbite_movieposter {
- 
-  
   height: 380px;
-  width: 250px;
-
+  width: 300px;
 }
 
 .firstbite_row {
@@ -375,7 +363,6 @@ aside {
   margin-right: auto;
   height: 600px;
   padding-bottom: 100px;
- 
 }
 
 #movie_poster {
@@ -384,33 +371,23 @@ aside {
   background-image: -webkit-gradient(linear, center top, center bottom, from(#222222), to(white));
 }
 
-
-
 .movie_image {
   zoom: 4;
   -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(40%, transparent), to(rgba(255,255,255,0.2)));
-
-
 }
 
 .movie_and_title {
   display: inline-block;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
   height: 600px;
-  width: 250px;
-
-
- 
+  width: 300px;
 }
 
 .movie_area {
   margin-left: auto;
   margin-right: auto;
-  
-
 }
-
 
 #first_poster {
   float: left;
