@@ -326,7 +326,7 @@ aside {
 #firstbite_title {
 
   font: bold 30px "Century Schoolbook", Georgia, Times, serif;
-  color: #333;
+  color: #fff;
   line-height: 90%;
   margin-right: 10px;
   margin-left: 10px;
@@ -346,8 +346,8 @@ aside {
 
 .movie_title {
 
-  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
-  color: #424242;
+  text-shadow: 2px 4px 3px ;
+  color: #ffffff;
   font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
   letter-spacing:0.1em;
   text-align:center;
@@ -370,9 +370,21 @@ aside {
   margin-left: 25;
   margin-bottom: 100px;
   margin-right: 175px;
+
 }
 
 .firstbite_row {
-  margin-right: auto;
-  margin-left: auto;
+ 
+}
+
+#movie_poster {
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#222222), to(white));
+}
+
+.reflection {
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(40%, transparent), to(rgba(255,255,255,0.2)));
+
+  height: 450px;
+  width: 312px;
+
 }
