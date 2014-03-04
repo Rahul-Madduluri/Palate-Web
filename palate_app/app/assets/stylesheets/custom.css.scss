@@ -362,7 +362,7 @@ aside {
   margin-left: auto;
   margin-right: auto;
   height: 600px;
-  padding-bottom: 100px;
+  padding-bottom: 200px;
 }
 
 #movie_poster {
@@ -373,7 +373,7 @@ aside {
 
 .movie_image {
   zoom: 4;
-  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(40%, transparent), to(rgba(255,255,255,0.2)));
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255,255,255,0.20)));
 }
 
 .movie_and_title {
