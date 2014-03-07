@@ -5,32 +5,7 @@
 
 <div class = "main">
 		
-	<% @allmovies.each do |slice| %>
-
-		<%= div_for(slice.at(0), class: "rows") do %>
-
-			<div class = "firstbite_row">
-				<div class = "movie_and_title" id = "first_movie_and_title">
-					<div class = "firstbite_movieposter" id = "first_poster">
-						<%= link_to image_tag(slice.at(0).url, class: "movie_image"), {:controller => 'static_pages', :action => 'update_movie_attr', :id => slice.at(0).id}, :remote => true %>
-					</div>
-					<p class="movie_title"><%= slice.at(0).title %></p>
-				</div>
-
-
-				<div class = "movie_and_title" id = "second_movie_and_title">
-					<div class = "firstbite_movieposter" id = "second_poster">
-						<%= link_to image_tag(slice.at(1).url, class: "movie_image"), {:controller => 'static_pages', :action => 'update_movie_attr', :id => slice.at(1).id}, :remote => true %>
-					</div>
-					<p class="movie_title"><%= slice.at(1).title %></p>
-				</div>
-
-			</div>
-			
-
-		<% end %>
-
-	<% end %>
+	<%= render 'firstbite_movies' %>
 </div>
 
 
@@ -54,5 +29,6 @@ $(".main").onepage_scroll({
                                     // you want the responsive fallback to be triggered. For example, set this to 600 and whenever 
                                     // the browser's width is less than 600, the fallback will kick in.
 });
+
 
 </script>
