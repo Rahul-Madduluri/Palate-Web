@@ -409,3 +409,31 @@ aside {
   float: right;
 }
 
+
+
+/* common */
+
+#wrap { position:relative }
+.left { float:left }
+.right { float:right }
+.row { display:block }
+#wrap { overflow:visible }
+
+
+/* main */
+body, #wrap{ height:100% }
+body, #wrap { width:100% }
+
+.row { margin:7px 0 }
+.row { height:200px }
+
+
+
+
+/* positioning */
+#wrap { width:100% }
+
+.left { left:-2% }
+.right { right:-2% }
+
+
