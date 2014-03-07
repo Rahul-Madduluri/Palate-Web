@@ -1,7 +1,7 @@
 <div id="wrap">
 <div id="inner">
 <% @allmovies.each do |slice| %>
-<%= div_for slice do %>
+<%= div_for slice.at(0) do %>
 	<div class = "firstbite_row row">
 		<div class = "movie_and_title left" id = "first_movie_and_title">
 			<div class = "firstbite_movieposter" id = "first_poster">
@@ -31,7 +31,8 @@
 function move() {
     var bh = $(document).height();
     $('.row').each(function() {
-        var rh = $(this).offset().top; //get distance between row and top of window
+        var eTop = $(this).parent().offset().top;
+        var rh = eTop - $(window).scrollTop(); //get distance between row and top of window
         var op = 0; //position to come together (0=top :: 1=bottom)
         var dn = ((rh/bh)-op)*100; //turn distance into pos
         var oo = ((dn-50)*-2)/100; //calc opacity
@@ -51,7 +52,6 @@ function move() {
 }
 
 
-});
 
 
 	$('.movie_and_title').click( function() {
