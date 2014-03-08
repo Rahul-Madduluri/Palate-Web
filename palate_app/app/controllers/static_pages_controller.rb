@@ -26,8 +26,26 @@ class StaticPagesController < ApplicationController
 	def update_movie_attr
 
 		@movie = Movie.find(params[:id])
+	
+		if current_user.adventurousness_affinity.nil?
+        	adventurousness = @movie.adventurousness/20
+        	instinctiveness = @movie.instinctiveness/20
+        	pace = @movie.pace/20
+        	valence = @movie.valence/20
+        	freshness = @movie.freshness/20
+        else
+        	adventurousness = @movie.adventurousness/20 + current_user.adventurousness_affinity
+        	instinctiveness = @movie.instinctiveness/20 + current_user.instinctiveness_affinity
+        	pace = @movie.pace/20 + current_user.pace_affinity
+        	valence = @movie.valence/20 + current_user.valence_affinity
+        	freshness = @movie.freshness/20 + current_user.freshness_affinity
+        end
 
-		current_user.add_firstbite(@movie, current_user.id)
+        current_user.update_attribute(:adventurousness_affinity, adventurousness)
+		current_user.update_attribute(:instinctiveness_affinity, instinctiveness)
+		current_user.update_attribute(:pace_affinity, pace)
+		current_user.update_attribute(:valence_affinity, valence)
+		current_user.update_attribute(:freshness_affinity, freshness)
 
 		respond_to do |format|
 			format.js

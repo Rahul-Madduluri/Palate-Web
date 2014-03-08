@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140303031754) do
+ActiveRecord::Schema.define(version: 20140308081706) do
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -26,14 +26,14 @@ ActiveRecord::Schema.define(version: 20140303031754) do
     t.string   "title"
     t.integer  "year"
     t.integer  "critics_rating"
-    t.integer  "adventurousness"
-    t.integer  "instinctiveness"
-    t.integer  "pace"
-    t.integer  "valence"
+    t.decimal  "adventurousness"
+    t.decimal  "instinctiveness"
+    t.decimal  "pace"
+    t.decimal  "valence"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "url"
-    t.integer  "freshness"
+    t.decimal  "freshness"
   end
 
   create_table "relationships", force: true do |t|
@@ -55,11 +55,11 @@ ActiveRecord::Schema.define(version: 20140303031754) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",                    default: false
-    t.integer  "adventurousness_affinity"
-    t.integer  "instinctiveness_affinity"
-    t.integer  "pace_affinity"
-    t.integer  "valence_affinity"
-    t.integer  "freshness_affinity"
+    t.decimal  "adventurousness_affinity"
+    t.decimal  "instinctiveness_affinity"
+    t.decimal  "pace_affinity"
+    t.decimal  "valence_affinity"
+    t.decimal  "freshness_affinity"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

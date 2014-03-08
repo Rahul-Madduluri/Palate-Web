@@ -1,10 +1,7 @@
-require 'badfruit'
 
 module MoviesHelper
 
 	def search_movie_and_create(aTitle, aYear)
-
-		bf = BadFruit.new("xkq5yzchy5wnpgjkdfuzb2m6")
 
 		movieID = RottenMovie.find(title: aTitle, year: aYear, limit: 1).id
 		aMovie = RottenMovie.find(id: movieID)
@@ -32,27 +29,20 @@ module MoviesHelper
 		pace=0
 		valence=0
 
-		badfruit_movie = bf.get_movie_info(movieID,"details")
-		badfruit_movie = bf.parse_movie_array(JSON.parse(badfruit_movie))
-
-
-
-
-
 
 		# add metric values of each genre associated with a movie and find average
-		badfruit_movie.genres.each { |genre| adventurousness += genre_scores[genre][:adventurousness]} unless badfruit_movie.genres.empty?
-		badfruit_movie.genres.each { |genre| instinctiveness+= genre_scores[genre][:instinctiveness]} unless badfruit_movie.genres.empty?
-		badfruit_movie.genres.each { |genre| pace += genre_scores[genre][:pace]} unless badfruit_movie.genres.empty?
-		badfruit_movie.genres.each { |genre| valence += genre_scores[genre][:valence]} unless badfruit_movie.genres.empty?
+		aMovie.genres.each { |genre| adventurousness += genre_scores[genre][:adventurousness]} unless aMovie.genres.nil?
+		aMovie.genres.each { |genre| instinctiveness+= genre_scores[genre][:instinctiveness]} unless aMovie.genres.nil?
+		aMovie.genres.each { |genre| pace += genre_scores[genre][:pace]} unless aMovie.genres.nil?
+		aMovie.genres.each { |genre| valence += genre_scores[genre][:valence]} unless aMovie.genres.nil?
 
-		#adventurousness = adventurousness / aMovie.genres.count
-		#instinctiveness = instinctiveness / aMovie.genres.count
-		#pace = pace / aMovie.genres.count
-		#valence = valence / aMovie.genres.count
+		adventurousness = adventurousness / aMovie.genres.count
+		instinctiveness = instinctiveness / aMovie.genres.count
+		pace = pace / aMovie.genres.count
+		valence = valence / aMovie.genres.count
 
 		@movie = Movie.create(title: aMovie.title, year: aMovie.year, adventurousness: adventurousness, instinctiveness: instinctiveness, 
-			pace: pace, valence: valence, freshness: aMovie.year/Time.now.year, critics_rating: aMovie.ratings.critics_score, url: aMovie.posters.original)
+			pace: pace, valence: valence, freshness: (aMovie.year-1900).to_f/(Time.now.year-1900), critics_rating: aMovie.ratings.critics_score, url: aMovie.posters.original)
 
 
 		
@@ -108,6 +98,7 @@ module MoviesHelper
 		search_movie_and_create('Seven', 1995)
 		search_movie_and_create('Unforgiven', 1992) 
 		search_movie_and_create('3:10 to Yuma', 2007)
+
 
 	end
 

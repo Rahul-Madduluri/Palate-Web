@@ -10,6 +10,10 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @adventurousness
+    @instinctiveness
+    @pace
+    @valence
   end
 
 
@@ -61,7 +65,7 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
-  
+
 
 
   private

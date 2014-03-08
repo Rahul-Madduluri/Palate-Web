@@ -24,11 +24,11 @@ class User < ActiveRecord::Base
     validates :password, length: { minimum: 6 }
 
     #entertainment attributes
-    #validates :adventurousness_affinity
-    #validates :instinctiveness_affinity
-    #validates :pace_affinity
-    #validates :pace_affinity
-    #validates :freshness_affinity
+    validates :adventurousness_affinity, presence: true, on: :update_attributes
+    validates :instinctiveness_affinity, presence: true, on: :update_attributes
+    validates :pace_affinity, presence: true, on: :update_attributes
+    validates :pace_affinity, presence: true, on: :update_attributes
+    validates :freshness_affinity, presence: true, on: :update_attributes
 
 
 
@@ -65,14 +65,14 @@ class User < ActiveRecord::Base
         pace = movie.pace/20
         valence = movie.valence/20
         freshness = movie.freshness/20
-=begin
+
         current_user.adventurousness_affinity += adventurousness
         current_user.instinctiveness_affinity += instinctiveness
         current_user.pace_affinity += pace
         current_user.valence_affinity += valence
         current_user.freshness_affinity += freshness
-=end
-        current_user.update_attributes!(adventurousness_affinity: adventurousness, instinctiveness_affinity: instinctiveness, pace_affinity: pace, valence_affinity: valence, freshness_affinity: freshness)
+
+        current_user.update_attributes(adventurousness_affinity: adventurousness, instinctiveness_affinity: instinctiveness, pace_affinity: pace, valence_affinity: valence, freshness_affinity: freshness)
 
     end
 
