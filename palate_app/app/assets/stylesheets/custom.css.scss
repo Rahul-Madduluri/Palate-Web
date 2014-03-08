@@ -30,6 +30,10 @@ textarea {
   resize: vertical;
 }
 
+.container {
+  padding-top: 80px;
+}
+
 .center {
   text-align: center;
   h1 {
@@ -338,9 +342,9 @@ aside {
 }
 
 .movie_title {
-  text-shadow: 2px 4px 3px ;
-  color: #ffffff;
-  font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+  /*text-shadow: 2px 4px 3px ;*/
+  color: #333;
+  font-family: "Hoefler Text", Georgia, Garamond, Times, serif;
   letter-spacing:0.1em;
   text-align:center;
   margin-left: auto;
@@ -349,7 +353,8 @@ aside {
   line-height: 145%;
   font-size: 14pt;
   font-variant: small-caps;
-  padding-top: 600px;
+  padding-top: 475px;
+  font-weight: bold;
 }
 
 
@@ -360,9 +365,8 @@ aside {
 }
 
 #firstbite_background {
-  margin-left: auto;
-  margin-right: auto;
   background-image: -webkit-gradient(linear, center top, center bottom, from(#222222), to(white));
+
 }
 
 .movie_image {
@@ -402,31 +406,7 @@ aside {
 }
 
 
+.question_mark {
+  height: 40px;
 
-
-/* common */
-
-#wrap { position:relative }
-.left { float:left }
-.right { float:right }
-.row { display:block }
-#wrap { overflow:visible }
-
-
-/* main */
-body, #wrap{ height:100% }
-body, #wrap { width:100% }
-
-.row { margin:7px 0 }
-.row { height:200px }
-
-
-
-
-/* positioning */
-#wrap { width:100% }
-
-.left { left:-2% }
-.right { right:-2% }
-
-
+}

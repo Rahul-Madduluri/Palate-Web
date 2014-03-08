@@ -27,6 +27,8 @@ class StaticPagesController < ApplicationController
 
 		@movie = Movie.find(params[:id])
 
+		current_user.add_firstbite(@movie, current_user.id)
+
 		respond_to do |format|
 			format.js
 			format.html

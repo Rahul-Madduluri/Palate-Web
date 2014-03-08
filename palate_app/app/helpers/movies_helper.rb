@@ -27,10 +27,10 @@ module MoviesHelper
 						 'Sports & Fitness'			=> { adventurousness: 0.5, instinctiveness: 0.9, pace: 0.8, valence: 0.8 },
 						 'Western'					=> { adventurousness: 0.3, instinctiveness: 0.7, pace: 0.3, valence: 0.6 } }
 
-		adventurousness=2.4
-		instinctiveness=2.4
-		pace=2.4
-		valence=2.4
+		adventurousness=0
+		instinctiveness=0
+		pace=0
+		valence=0
 
 		badfruit_movie = bf.get_movie_info(movieID,"details")
 		badfruit_movie = bf.parse_movie_array(JSON.parse(badfruit_movie))

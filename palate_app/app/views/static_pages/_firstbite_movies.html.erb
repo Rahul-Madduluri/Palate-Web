@@ -9,6 +9,9 @@
 			<p class="movie_title"><%= slice.at(0).title %></p>
 		</div>
 
+		
+		<span class="question_image"><%= image_tag("question_mark.jpg", class: "question_mark") %></span>
+		
 
 		<div class = "movie_and_title" id = "second_movie_and_title">
 			<div class = "firstbite_movieposter" id = "second_poster">
@@ -27,7 +30,13 @@
 <script type = "text/javascript">
 
 
+	$('.question_image').click(function() {
+		var first = $('#first_movie_and_title', $(this).parent());
+		var second = $('#second_movie_and_title', $(this).parent());
 
+		$(first).fadeTo(1000,.25);
+		$(second).fadeTo(1000,.25);
+	})
 
 
 	$('.movie_and_title').click( function() {

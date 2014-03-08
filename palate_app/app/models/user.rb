@@ -8,16 +8,28 @@ class User < ActiveRecord::Base
     has_many :followers, through: :reverse_relationships, source: :follower
 
 	before_save { self.email = email.downcase }
+
+    #remember token
 	before_create :create_remember_token
 
+    #name of user
     validates :name,  presence: true, length: { maximum: 50 }
+    
+    #email
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
 
-
+    #password
     has_secure_password
-
     validates :password, length: { minimum: 6 }
+
+    #entertainment attributes
+    #validates :adventurousness_affinity
+    #validates :instinctiveness_affinity
+    #validates :pace_affinity
+    #validates :pace_affinity
+    #validates :freshness_affinity
+
 
 
     def User.new_remember_token
@@ -43,6 +55,27 @@ class User < ActiveRecord::Base
     def feed
         Micropost.from_users_followed_by(self)
     end
+
+    def add_firstbite(movie, userID)
+
+        current_user = User.find_by(id: userID)
+
+        adventurousness = movie.adventurousness/20
+        instinctiveness = movie.instinctiveness/20
+        pace = movie.pace/20
+        valence = movie.valence/20
+        freshness = movie.freshness/20
+=begin
+        current_user.adventurousness_affinity += adventurousness
+        current_user.instinctiveness_affinity += instinctiveness
+        current_user.pace_affinity += pace
+        current_user.valence_affinity += valence
+        current_user.freshness_affinity += freshness
+=end
+        current_user.update_attributes!(adventurousness_affinity: adventurousness, instinctiveness_affinity: instinctiveness, pace_affinity: pace, valence_affinity: valence, freshness_affinity: freshness)
+
+    end
+
 
 
 
