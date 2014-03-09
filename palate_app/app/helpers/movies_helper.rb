@@ -7,7 +7,7 @@ module MoviesHelper
 		aMovie = RottenMovie.find(id: movieID)
 
 
-		genre_scores = { 'Action & Adventure' 		=> { adventurousness: 0.4, instinctiveness: 0.8, pace: 0.7, valence: 0.6 },
+		genre_scores = { 'Action & Adventure' 		=> { adventurousness: 0.4, instinctiveness: 0.8, pace: 0.8, valence: 0.6 },
 						 'Animation'		  		=> { adventurousness: 0.7, instinctiveness: 0.5, pace: 0.8, valence: 0.8 },
 						 'Art House & International'=> { adventurousness: 0.8, instinctiveness: 0.2, pace: 0.2, valence: 0.3 },
 						 'Classics'					=> { adventurousness: 0.2, instinctiveness: 0.6, pace: 0.3, valence: 0.5 },
@@ -24,6 +24,24 @@ module MoviesHelper
 						 'Sports & Fitness'			=> { adventurousness: 0.5, instinctiveness: 0.9, pace: 0.8, valence: 0.8 },
 						 'Western'					=> { adventurousness: 0.3, instinctiveness: 0.7, pace: 0.3, valence: 0.6 } }
 
+=begin
+		genre_scores = { 'Action & Adventure' 		=> { adventurousness: 0, instinctiveness: 1, pace: 1, valence: 1 },
+						 'Animation'		  		=> { adventurousness: 0, instinctiveness: 0.5, pace: 1, valence: 1 },
+						 'Art House & International'=> { adventurousness: 1, instinctiveness: 0, pace: 0, valence: 0 },
+						 'Classics'					=> { adventurousness: 0, instinctiveness: 1, pace: 0, valence: 0.5 },
+						 'Comedy'					=> { adventurousness: 0, instinctiveness: 1, pace: 0, valence: 1 },
+						 'Documentary'				=> { adventurousness: 0, instinctiveness: 0, pace: 0, valence: 1 },
+						 'Drama'					=> { adventurousness: 0.5, instinctiveness: 1, pace: 0.5, valence: 0.5 },
+						 'Horror'					=> { adventurousness: 0.5, instinctiveness: 1, pace: 0, valence: 0 },
+						 'Kids & Family'			=> { adventurousness: 0, instinctiveness: 1, pace: 1, valence: 1 },
+						 'Mystery & Suspense'		=> { adventurousness: 1, instinctiveness: 0, pace: 0, valence: 0 },
+						 'Musical & Performing Arts'=> { adventurousness: 0, instinctiveness: 1, pace: 1, valence: 1 },
+						 'Romance'					=> { adventurousness: 0, instinctiveness: 1, pace: 0.5, valence: 1 },
+						 'Science Fiction & Fantasy'=> { adventurousness: 1, instinctiveness: 0, pace: 0.5, valence: 1 },
+						 'Special Interest'			=> { adventurousness: 1, instinctiveness: 0.5, pace: 0.5, valence: 0.5 },
+						 'Sports & Fitness'			=> { adventurousness: 0.5, instinctiveness: 1, pace: 1, valence: 1 },
+						 'Western'					=> { adventurousness: 0, instinctiveness: 1, pace: 0, valence: 1 } }
+=end
 		adventurousness=0
 		instinctiveness=0
 		pace=0

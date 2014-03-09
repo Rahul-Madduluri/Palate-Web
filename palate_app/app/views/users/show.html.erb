@@ -13,6 +13,19 @@
 	</aside>
 	<%= link_to "Profile Me!", firstbite_url , class: "btn btn-large btn-primary" %>
 
+
+
+	<%= @adventurousness %>
+	<%= current_user.adventurousness_affinity %>
+	<%= @instinctiveness %>
+	<%= current_user.instinctiveness_affinity %>
+	<%= @pace %>
+	<%= current_user.pace_affinity %>
+	<%= @valence %>
+	<%= current_user.valence_affinity %>
+
+	<%= Echowrap.song_search(:min_danceability => ((current_user.pace_affinity + current_user.instinctiveness_affinity + current_user.valence_affinity)/3), min_energy: ((current_user.pace_affinity + current_user.valence_affinity)/2), :min_acousticness => (((1 - current_user.pace_affinity) + (1 - current_user.valence_affinity))/2), :artist_min_familiarity => 0.8, :results => 5) %>
+
 	<div class="span8">
 		<%= render 'follow_form' if signed_in? %>
 	</div>

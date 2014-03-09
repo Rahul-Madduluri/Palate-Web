@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140308081706) do
+ActiveRecord::Schema.define(version: 20140309004142) do
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20140308081706) do
     t.decimal  "pace_affinity"
     t.decimal  "valence_affinity"
     t.decimal  "freshness_affinity"
+    t.decimal  "critics_affinity"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
