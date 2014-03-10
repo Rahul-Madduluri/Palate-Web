@@ -3,7 +3,7 @@
     
       <%= link_to feed_item.user.name, feed_item.user %>
     
-   <%= feed_item.content %>
+   <%= url_link(format(feed_item.content)) %>
     
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
     

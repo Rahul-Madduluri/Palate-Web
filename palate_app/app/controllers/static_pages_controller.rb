@@ -2,9 +2,12 @@ class StaticPagesController < ApplicationController
 
     def home
     	if signed_in?
-    		@songs = Echowrap.song_search(:min_danceability => ((current_user.pace_affinity + current_user.instinctiveness_affinity + current_user.valence_affinity)/3), min_energy: ((current_user.pace_affinity + current_user.valence_affinity)/2), :min_acousticness => (((1 - current_user.pace_affinity) + (1 - current_user.valence_affinity))/2), :artist_min_familiarity => 0.8, :results => 10)
-      		artist_url = Echowrap.artist_images(id: @songs[0].artist_id, results: 1)[0].url.inspect
-          current_user.microposts.create(content: artist_url)
+    		@songs = Echowrap.song_search(:min_danceability => ((current_user.pace_affinity + current_user.instinctiveness_affinity + current_user.valence_affinity)/3), min_energy: ((current_user.pace_affinity + current_user.valence_affinity)/2), :min_acousticness => (((1 - current_user.pace_affinity) + (1 - current_user.valence_affinity))/2), :artist_min_familiarity => 0.6, :results => 5)
+      		@songs.each do |song|
+	      		artist_url = Echowrap.artist_images(id: song.artist_id, results: 1)[0].url
+	      		post_content = song.title + artist_url
+	            current_user.microposts.create(content: post_content)
+	        end
       		@micropost  = current_user.microposts.build
      		@feed_items = current_user.feed.paginate(page: params[:page])
     	end
