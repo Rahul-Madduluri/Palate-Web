@@ -229,6 +229,59 @@ input {
 }
 
 
+/* User profile page */
+.taste_profile {
+
+  height: 350px;
+  width: 1000px;
+  background: #DFDFDF;
+  border-radius: 10px;
+  margin: auto;
+  padding-top: 5px;
+  padding-left: 5px;
+
+}
+
+.profile_bits {
+
+  height: 100px;
+  width: 100px;
+  background: #1E90FF;
+  margin: 10px 10px 10px 10px;
+  border-radius: 10px;
+}
+
+.profile_bits_text {
+  font-family: Impact;
+  font-size: 50px;
+  color: #DCDCDC;
+  margin: 10px 10px 10px 10px;
+  padding: 40px 10px 10px 2px;
+}
+
+.five_movies {
+
+}
+
+
+.five_songs {
+
+}
+
+
+.five_celebs {
+
+}
+
+.five_text {
+  margin-left: 15px;
+  font-family: Century;
+  font-size: 25px;
+
+}
+
+
+
 /* microposts / palate recommendations */
 
 .microposts {
