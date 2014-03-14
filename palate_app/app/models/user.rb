@@ -1,5 +1,10 @@
 class User < ActiveRecord::Base
+
+    #microposts and recommendations
     has_many :microposts, dependent: :destroy
+    has_many :palate_recommendations, dependent: :destroy
+
+    #relationships
     has_many :relationships, foreign_key: "follower_id", dependent: :destroy
     has_many :followed_users, through: :relationships, source: :followed
     has_many :reverse_relationships, foreign_key: "followed_id",
@@ -53,7 +58,8 @@ class User < ActiveRecord::Base
     end
 
     def feed
-        Micropost.from_users_followed_by(self)
+        array = PalateRecommendation.for_user(self).zip(Micropost.from_users_followed_by(self)).flatten.compact
+        array
     end
 
     def add_firstbite(movie, userID)

@@ -11,10 +11,10 @@ class StaticPagesController < ApplicationController
       		@songs.each do |song|
 	      		artist_url = Echowrap.artist_images(id: song.artist_id, results: 1)[0].url
 	      		post_content = song.title + "\n" + song.artist_name + artist_url
-	            current_user.microposts.create(content: post_content)
+	            current_user.palate_recommendations.create(content: post_content)
 	        end
       		@micropost  = current_user.microposts.build
-     		@feed_items = current_user.feed.paginate(page: params[:page])
+     		@feed_items = current_user.feed
     	end
   	end
 

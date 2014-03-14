@@ -7,6 +7,7 @@ PalateApp::Application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
+  resources :palate_recommendations, only: :create
   resources :relationships, only: [:create, :destroy]
 
   resources :movies do

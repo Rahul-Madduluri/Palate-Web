@@ -121,6 +121,17 @@ describe "Authentication" do
 				end
 			end
 
+			describe "in the PalateRecommendations controller" do
+
+				describe "submitting to the create action" do
+					before { post palate_recommendations_path }
+					specify { expect(response).to redirect_to(signin_path) }
+				end
+
+			end
+
+
+
 			describe "in the Relationships controller " do
 
 				describe "submitting to the create action" do

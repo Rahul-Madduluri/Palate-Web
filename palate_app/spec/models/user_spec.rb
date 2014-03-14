@@ -17,6 +17,7 @@ describe User do
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
   it { should respond_to(:microposts) }
+  it { should respond_to(:palate_recommendations) }
   it { should respond_to(:feed) }
   it { should respond_to(:relationships) }
   it { should respond_to(:followed_users) }
@@ -177,6 +178,32 @@ describe User do
       end
     end
 
+
+  end
+
+  describe "palate recommendation associations" do
+
+    before { @user.save }
+    let!(:older_recommendation) do
+      FactoryGirl.create(:palate_recommendation, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_recommendation) do
+      FactoryGirl.create(:palate_recommendation, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right recommendation in the right order" do
+      expect(@user.palate_recommendations.to_a).to eq [newer_recommendation, older_recommendation]
+    end
+
+
+    it "should destroy associated recommendations" do
+      recommendations = @user.palate_recommendations.to_a
+      @user.destroy
+      expect(recommendations).not_to be_empty
+      recommendations.each do |recommendation|
+        expect(PalateRecommendation.where(id: recommendation.id)).to be_empty
+      end
+    end
 
   end
 

@@ -14,4 +14,9 @@ FactoryGirl.define do
     content "Lorem ipsum"
     user
   end
+
+  factory :palate_recommendation do
+    content "Blank recommendation"
+    user
+  end
 end
