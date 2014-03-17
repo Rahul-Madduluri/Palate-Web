@@ -312,7 +312,7 @@ input {
 
 .five_text {
   margin-left: 15px;
-  font-family: Lucida Grande, sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 25px;
 
 }
@@ -419,11 +419,32 @@ aside {
 }
 
 #words {
-  font: 18px Arial, sans-serif;
+  font-family: "HelveticaNeue", Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', arial, sans-serif;
+  font-size: 14px;
   color: #333;
   margin: 0;
 }
 
+#timeago {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 10px;
+  color: #666;
+}
+
+.hr {
+  clear: both;
+}
+
+.feed_gravatar {
+  height:75px;
+  width: 75px;
+  float: left;
+}
+
+#username {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+}
 
 
 .sidebar {

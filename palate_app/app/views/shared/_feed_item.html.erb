@@ -1,14 +1,29 @@
 <div class="pin">
 
 	<% if (feed_item.is_a? Micropost) %>
-		<%= link_to gravatar_for(feed_item.user), feed_item.user %>
 
-		<%= link_to feed_item.user.name, feed_item.user %>
+
+	
+		<div class = "feed_gravatar">
+			<%= link_to gravatar_for(feed_item.user), feed_item.user %>
+		</div>
+		
+		<div id = "username">
+			<%= link_to feed_item.user.name, feed_item.user %>
+		</div>
+
+		<div class ="hr">
+			<hr>
+		</div>
 	<% end %>
 
-	<%= url_link(feed_item.content) %>
+	<div id="words">
+		<%= url_link(feed_item.content) %>
+	</div>
 
-	Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+	<div id="timeago">
+		Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+	</div>
     
     <% if (feed_item.is_a? Micropost) %>
 		<% if current_user?(feed_item.user) %>
