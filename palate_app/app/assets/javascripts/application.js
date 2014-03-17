@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.onepage-scroll.js
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+//= stub jquery.onepage-scroll.js
 

@@ -28,9 +28,24 @@
 
 	<div id="columns_user">
 		<div class="pin_user">
-			<div class= "five_movies" >
+			<div class= "five_movies" style = "overflow:hidden" >
 				<div class = "five_text">
-					Top 5 Movies
+					Top 5 Movies <br><br>
+					<div class="profile_page_movie">
+						<%= image_tag(Movie.first.url) %>
+					</div>
+					<div class = "profile_page_movie">
+						<%= image_tag((Movie.take(2))[1].url) %>
+					</div>
+					<div class = "profile_page_movie">
+						<%= image_tag((Movie.take(3))[2].url) %>
+					</div>
+					<div class = "profile_page_movie">
+						<%= image_tag((Movie.take(4))[3].url) %>
+					</div>
+					<div class = "profile_page_movie" >
+						<%= image_tag((Movie.take(5))[4].url) %>
+					</div>
 				</div>
 			</div>
 		</div>
