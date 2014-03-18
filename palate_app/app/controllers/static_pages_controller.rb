@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
     										min_energy: ((current_user.pace_affinity + current_user.valence_affinity)/2), 
     										:min_acousticness => (((1 - current_user.pace_affinity) + (1 - current_user.valence_affinity))/2), 
     										:artist_min_familiarity => 0.6, 
-    										:bucket => "id:spotify-WW",
+    										:bucket => ["id:spotify-WW","tracks"],
     										:results => 5)
       		@songs.each do |song|
 	      		artist_url = Echowrap.artist_images(id: song.artist_id, results: 1)[0].url

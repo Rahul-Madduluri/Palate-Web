@@ -3,11 +3,11 @@
 	<% if (feed_item.is_a? Micropost) %>
 
 
-	
+
 		<div class = "feed_gravatar">
 			<%= link_to gravatar_for(feed_item.user), feed_item.user %>
 		</div>
-		
+
 		<div id = "username">
 			<%= link_to feed_item.user.name, feed_item.user %>
 		</div>
@@ -15,6 +15,7 @@
 		<div class ="hr">
 			<hr>
 		</div>
+
 	<% end %>
 
 	<div id="words">
@@ -34,3 +35,5 @@
 	<% end %>
 
 </div>
+
+
