@@ -19,4 +19,11 @@ FactoryGirl.define do
     content "Blank recommendation"
     user
   end
+
+  factory :artist do
+    name "Jay-Z"
+    twitter_handle "@S_C_"
+    echonest_id "ARLGIX31187B9AE9A0"
+  end
+
 end

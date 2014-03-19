@@ -8,6 +8,8 @@ describe User do
 
   subject { @user }
 
+
+  #properties
   it { should respond_to(:name) }
   it { should respond_to(:email) }
   it { should respond_to(:password_digest) }
@@ -16,17 +18,29 @@ describe User do
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
+
+  #posts/feed
   it { should respond_to(:microposts) }
   it { should respond_to(:palate_recommendations) }
   it { should respond_to(:feed) }
+
+  #relationships with other users
   it { should respond_to(:relationships) }
-  it { should respond_to(:followed_users) }
   it { should respond_to(:followed_users) }
   it { should respond_to(:following?) }
   it { should respond_to(:follow!) }
   it { should respond_to(:unfollow!) }
   it { should respond_to(:reverse_relationships) }
   it { should respond_to(:followers) }
+
+  #relationships with artists
+  it { should respond_to(:user_artists) }
+  it { should respond_to(:artists)}
+  it { should respond_to(:listening_to?) }
+  it { should respond_to(:listen_to!) }
+
+
+  # taste profile
   it { should respond_to(:adventurousness_affinity) }
   it { should respond_to(:instinctiveness_affinity) }
   it { should respond_to(:pace_affinity) }
@@ -228,6 +242,24 @@ describe User do
 
       it { should_not be_following(other_user) }
       its(:followed_users) { should_not include(other_user) }
+    end
+
+  end
+
+  describe "listening to" do
+
+    let(:artist) { FactoryGirl.create(:artist) }
+    before do
+      @user.save
+      @user.listen_to!(artist)
+    end
+
+    it { should be_listening_to(artist) }
+    its(:artists) { should  include(artist) }
+
+    describe "listened to artist" do
+      subject { artist }
+      its(:users) { should include(@user) }
     end
 
   end

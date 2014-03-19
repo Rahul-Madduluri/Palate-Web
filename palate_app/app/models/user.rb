@@ -4,7 +4,12 @@ class User < ActiveRecord::Base
     has_many :microposts, dependent: :destroy
     has_many :palate_recommendations, dependent: :destroy
 
-    #relationships
+    #artist relationships
+    has_many :user_artists, dependent: :destroy
+    has_many :artists, through: :user_artists
+
+
+    #user relationships
     has_many :relationships, foreign_key: "follower_id", dependent: :destroy
     has_many :followed_users, through: :relationships, source: :followed
     has_many :reverse_relationships, foreign_key: "followed_id",
@@ -55,6 +60,14 @@ class User < ActiveRecord::Base
 
     def unfollow!(other_user)
         relationships.find_by(followed_id: other_user.id).destroy
+    end
+
+    def listening_to?(artist)
+        user_artists.find_by(artist_id: artist.id)
+    end
+
+    def listen_to!(artist)
+        user_artists.create!(artist_id: artist.id)
     end
 
     def feed
