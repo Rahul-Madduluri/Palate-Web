@@ -10,7 +10,7 @@ module UsersHelper
 
   def display_profile_bits
  
-  	if ( current_user == @user) 
+  	unless (@user.adventurousness_affinity.nil? || @user.instinctiveness_affinity.nil? || @user.pace_affinity.nil? || @user.valence_affinity.nil?)
 	  	if (@user.adventurousness_affinity > 0.5)
 	  		first_letter = "I"
 	  	else

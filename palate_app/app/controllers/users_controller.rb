@@ -80,26 +80,28 @@ class UsersController < ApplicationController
 
     def taste_profile
       
-        if current_user.adventurousness_affinity > 0.5
+      unless (@user.adventurousness_affinity.nil? || @user.instinctiveness_affinity.nil? || @user.pace_affinity.nil? || @user.valence_affinity.nil?)
+        if @user.adventurousness_affinity > 0.5
           @adventurousness = "inventive"
         else
           @adventurousness = "classic"
         end
-        if current_user.instinctiveness_affinity > 0.5
+        if @user.instinctiveness_affinity > 0.5
           @instinctiveness = "visceral"
         else
           @instinctiveness = "cerebral"
         end
-        if current_user.pace_affinity > 0.5
+        if @user.pace_affinity > 0.5
           @pace = "energetic"
         else
           @pace = "reflective"
         end
-        if current_user.valence_affinity > 0.5
+        if @user.valence_affinity > 0.5
           @valence = "jovial"
         else
           @valence = "enigmatic"
         end
+      end
       
     end
 
