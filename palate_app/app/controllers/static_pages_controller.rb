@@ -15,11 +15,14 @@ class StaticPagesController < ApplicationController
                 end
                 if Song.where(echonest_id: song.id).blank?
                     artist = Artist.find_by(echonest_id: song.artist_id)
-                    Song.create!(title: song.title, echonest_id: song.id, artist_id: artist.id)
+                    spotify_uri = song.tracks[0].foreign_id.sub!('spotify-WW','spotify')
+                    Song.create!(title: song.title, echonest_id: song.id, artist: artist, spotify_uri: spotify_uri)
                 end
+
                 new_song = Song.find_by(echonest_id: song.id)
-	      		post_content = new_song.title + "\n" + new_song.artist.name + new_song.artist.image_url
-	            current_user.palate_recommendations.create(content: post_content, media_id: new_song.id)
+      		    post_content = new_song.title + "\n" + new_song.artist.name + " " +new_song.artist.image_url
+
+	            current_user.palate_recommendations.create!(content: post_content, media:new_song)
 	        end
       		@micropost  = current_user.microposts.build
      		@feed_items = current_user.feed
@@ -29,16 +32,6 @@ class StaticPagesController < ApplicationController
 
 	def firstbite
 		@allmovies = Movie.all.each_slice(2)
-		#@presetmovies = @allmovies.next
-
-
-=begin
-		respond_to do |format|
-	    	format.js
-	    	format.html { redirect_to(root_url) }
-  		end
-=end
-
 	end
 
 

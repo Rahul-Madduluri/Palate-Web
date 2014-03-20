@@ -2,8 +2,6 @@
 
 	<% if (feed_item.is_a? Micropost) %>
 
-
-
 		<div class = "feed_gravatar">
 			<%= link_to gravatar_for(feed_item.user), feed_item.user %>
 		</div>
@@ -13,12 +11,15 @@
 		</div>
 
 		<br>
-
-		<div class ="hr">
-			<hr>
-		</div>
-
+	<% else %>
+		<% unless (feed_item.media.nil? || feed_item.media.spotify_uri.blank?) %>
+			<iframe src="https://embed.spotify.com/?uri=<%= feed_item.media.spotify_uri %>" width="250" height="80" frameborder="0" allowtransparency="true"></iframe>
+		<% end %>
 	<% end %>
+
+	<div class ="hr">
+		<hr>
+	</div>
 
 	<div id="words">
 		<%= url_link(feed_item.content) %>
