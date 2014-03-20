@@ -2,16 +2,24 @@ class StaticPagesController < ApplicationController
 
     def home
     	if signed_in?
-    		@songs = Echowrap.song_search(:min_danceability => ((current_user.pace_affinity + current_user.instinctiveness_affinity + current_user.valence_affinity)/3), 
+    		songs = Echowrap.song_search(:min_danceability => ((current_user.pace_affinity + current_user.instinctiveness_affinity + current_user.valence_affinity)/3), 
     										min_energy: ((current_user.pace_affinity + current_user.valence_affinity)/2), 
     										:min_acousticness => (((1 - current_user.pace_affinity) + (1 - current_user.valence_affinity))/2), 
     										:artist_min_familiarity => 0.6, 
     										:bucket => ["id:spotify-WW","tracks"],
     										:results => 5)
-      		@songs.each do |song|
-	      		artist_url = Echowrap.artist_images(id: song.artist_id, results: 1)[0].url
-	      		post_content = song.title + "\n" + song.artist_name + artist_url
-	            current_user.palate_recommendations.create(content: post_content)
+      		songs.each do |song|
+                if Artist.where(echonest_id: song.artist_id).blank?
+                    artist_url = Echowrap.artist_images(id: song.artist_id, results: 1)[0].url
+                    Artist.create!(name: song.artist_name, echonest_id: song.artist_id, image_url: artist_url)
+                end
+                if Song.where(echonest_id: song.id).blank?
+                    artist = Artist.find_by(echonest_id: song.artist_id)
+                    Song.create!(title: song.title, echonest_id: song.id, artist_id: artist.id)
+                end
+                new_song = Song.find_by(echonest_id: song.id)
+	      		post_content = new_song.title + "\n" + new_song.artist.name + new_song.artist.image_url
+	            current_user.palate_recommendations.create(content: post_content, media_id: new_song.id)
 	        end
       		@micropost  = current_user.microposts.build
      		@feed_items = current_user.feed
