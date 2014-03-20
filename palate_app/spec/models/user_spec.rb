@@ -201,6 +201,7 @@ describe User do
 
   end
 
+
   describe "palate recommendation associations" do
 
     before { @user.save }

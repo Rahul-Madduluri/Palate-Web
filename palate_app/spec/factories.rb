@@ -27,6 +27,12 @@ FactoryGirl.define do
     image_url "https://pbs.twimg.com/profile_images/378800000105380529/d93530471e4401511ff1740dbd4a7d65.jpeg"
   end
 
+  factory :song do
+    title "Holy Grail"
+    artist
+  end
+
+
   factory :movie do
     title "The Hangover"
     year 2009
