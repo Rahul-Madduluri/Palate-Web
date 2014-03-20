@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140319074807) do
+ActiveRecord::Schema.define(version: 20140319223445) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -77,6 +77,17 @@ ActiveRecord::Schema.define(version: 20140319074807) do
   add_index "user_artists", ["artist_id"], name: "index_user_artists_on_artist_id"
   add_index "user_artists", ["user_id", "artist_id"], name: "index_user_artists_on_user_id_and_artist_id", unique: true
   add_index "user_artists", ["user_id"], name: "index_user_artists_on_user_id"
+
+  create_table "user_movies", force: true do |t|
+    t.string   "user_id"
+    t.string   "movie_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_movies", ["movie_id"], name: "index_user_movies_on_movie_id"
+  add_index "user_movies", ["user_id", "movie_id"], name: "index_user_movies_on_user_id_and_movie_id", unique: true
+  add_index "user_movies", ["user_id"], name: "index_user_movies_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

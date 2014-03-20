@@ -39,6 +39,12 @@ describe User do
   it { should respond_to(:listening_to?) }
   it { should respond_to(:listen_to!) }
 
+  #relationship with movies
+  it { should respond_to(:user_movies) }
+  it { should respond_to(:movies) }
+  it { should respond_to(:watching?) }
+  it { should respond_to(:watch!) }
+
 
   # taste profile
   it { should respond_to(:adventurousness_affinity) }
@@ -259,6 +265,24 @@ describe User do
 
     describe "listened to artist" do
       subject { artist }
+      its(:users) { should include(@user) }
+    end
+
+  end
+
+  describe "watching" do
+
+    let(:movie) { FactoryGirl.create(:movie) }
+    before do
+      @user.save
+      @user.watch!(movie)
+    end
+
+    it { should be_watching(movie) }
+    its(:movies) { should  include(movie) }
+
+    describe "watched movie" do
+      subject { movie }
       its(:users) { should include(@user) }
     end
 

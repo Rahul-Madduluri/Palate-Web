@@ -5,7 +5,7 @@ class Artist < ActiveRecord::Base
 
 	validates :name, presence: true
 	validates :echonest_id, presence: true
-	validates :twitter_handle
-	validates :image_url
+	validates :twitter_handle, presence: true
+	validates :image_url, presence: true
 
 end

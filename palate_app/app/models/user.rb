@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
     has_many :user_artists, dependent: :destroy
     has_many :artists, through: :user_artists
 
+    #movie relationships
+    has_many :user_movies, dependent: :destroy
+    has_many :movies, through: :user_movies
+
 
     #user relationships
     has_many :relationships, foreign_key: "follower_id", dependent: :destroy
@@ -41,7 +45,7 @@ class User < ActiveRecord::Base
     validates :freshness_affinity, presence: true, on: :update_attributes
 
 
-
+    # remember token / encryption
     def User.new_remember_token
     	SecureRandom.urlsafe_base64
     end
@@ -50,6 +54,8 @@ class User < ActiveRecord::Base
     	Digest::SHA1.hexdigest(token.to_s)
   	end
 
+
+    # following other users
     def following?(other_user)
         relationships.find_by(followed_id: other_user.id)
     end
@@ -62,6 +68,8 @@ class User < ActiveRecord::Base
         relationships.find_by(followed_id: other_user.id).destroy
     end
 
+
+    # music
     def listening_to?(artist)
         user_artists.find_by(artist_id: artist.id)
     end
@@ -70,11 +78,25 @@ class User < ActiveRecord::Base
         user_artists.create!(artist_id: artist.id)
     end
 
+
+
+    #movies
+    def watching?(movie)
+        user_movies.find_by(movie_id: movie.id)
+    end
+
+    def watch!(movie)
+        user_movies.create!(movie_id: movie.id)
+    end
+
+
+    #static pages
     def feed
         array = PalateRecommendation.for_user(self).zip(Micropost.from_users_followed_by(self)).flatten.compact
         array
     end
 
+    
     def add_firstbite(movie, userID)
 
         current_user = User.find_by(id: userID)
