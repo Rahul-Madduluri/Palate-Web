@@ -15,8 +15,13 @@ class StaticPagesController < ApplicationController
                 end
                 if Song.where(echonest_id: song.id).blank?
                     artist = Artist.find_by(echonest_id: song.artist_id)
-                    spotify_uri = song.tracks[0].foreign_id.sub!('spotify-WW','spotify')
-                    Song.create!(title: song.title, echonest_id: song.id, artist: artist, spotify_uri: spotify_uri)
+                    unless (song.tracks[0].nil?)
+                        spotify_uri = song.tracks[0].foreign_id.sub!('spotify-WW','spotify')
+                        Song.create!(title: song.title, echonest_id: song.id, artist: artist, spotify_uri: spotify_uri)
+                    else
+                        Song.create!(title: song.title, echonest_id: song.id, artist: artist)
+                    end
+
                 end
 
                 new_song = Song.find_by(echonest_id: song.id)

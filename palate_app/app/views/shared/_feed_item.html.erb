@@ -13,7 +13,9 @@
 		<br>
 	<% else %>
 		<% unless (feed_item.media.nil? || feed_item.media.spotify_uri.blank?) %>
-			<iframe src="https://embed.spotify.com/?uri=<%= feed_item.media.spotify_uri %>" width="250" height="80" frameborder="0" allowtransparency="true"></iframe>
+			<div class = "spotify_play">
+				<iframe src="https://embed.spotify.com/?uri=<%= feed_item.media.spotify_uri %>" width="250" height="80" frameborder="0" allowtransparency="true"></iframe>
+			</div>
 		<% end %>
 	<% end %>
 
