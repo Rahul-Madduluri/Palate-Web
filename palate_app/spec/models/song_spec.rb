@@ -13,6 +13,11 @@ describe Song do
 	it { should respond_to(:title) }
 	it { should respond_to(:artist_id) }
 	it { should respond_to(:artist) }
+
+
+	it { should respond_to(:official_rating) }
+
+
 	its(:artist) { should eq artist }
 
 	it { should be_valid }

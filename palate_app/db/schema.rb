@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320192153) do
+ActiveRecord::Schema.define(version: 20140330035835) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140320192153) do
     t.datetime "updated_at"
     t.string   "url"
     t.decimal  "freshness"
+    t.decimal  "official_rating"
   end
 
   create_table "palate_recommendations", force: true do |t|
@@ -77,6 +78,7 @@ ActiveRecord::Schema.define(version: 20140320192153) do
     t.datetime "updated_at"
     t.string   "echonest_id"
     t.string   "spotify_uri"
+    t.decimal  "official_rating"
   end
 
   add_index "songs", ["echonest_id"], name: "index_songs_on_echonest_id"

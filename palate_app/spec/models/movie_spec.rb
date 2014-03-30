@@ -21,8 +21,7 @@ describe Movie do
   it { should respond_to(:freshness) }
 
 
-
-
+  it { should respond_to(:official_rating) }
 
   it { should respond_to(:users) }
 

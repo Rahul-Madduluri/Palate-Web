@@ -17,7 +17,28 @@
 				<iframe src="https://embed.spotify.com/?uri=<%= feed_item.media.spotify_uri %>" width="250" height="80" frameborder="0" allowtransparency="true"></iframe>
 			</div>
 		<% end %>
+
+		<div class = "ratings">
+			<div class = "official_rating">
+				<% unless (feed_item.media.nil? || feed_item.media.official_rating.blank?) %>
+					<% for i in (1..(feed_item.media.official_rating*5).ciel) %>
+						<div class = "official_rating_dot">
+							<%= image_tag("greycircle.png") %>
+						</div>
+					<% end %>
+				<% end %>
+				<% for i in (0..3) %>
+					<div class = "official_rating_dot">
+						<%= image_tag("greycircle.png") %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+
+
 	<% end %>
+
+	
 
 	<div class ="hr">
 		<hr>
