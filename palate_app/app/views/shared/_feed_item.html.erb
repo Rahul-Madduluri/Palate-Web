@@ -12,12 +12,9 @@
 
 		<br>
 	<% else %>
-		<% unless (feed_item.media.nil? || feed_item.media.spotify_uri.blank?) %>
-			<div class = "spotify_play">
-				<iframe src="https://embed.spotify.com/?uri=<%= feed_item.media.spotify_uri %>" width="250" height="80" frameborder="0" allowtransparency="true"></iframe>
-			</div>
-		<% end %>
 
+		<span id="media_title"><%= url_link(feed_item.media.title) %></span>
+		
 		<div class = "ratings">
 			<div class = "official_rating">
 				<% unless (feed_item.media.nil? || feed_item.media.official_rating.blank?) %>
@@ -34,6 +31,13 @@
 				<% end %>
 			</div>
 		</div>
+		<br><br>
+		<% unless (feed_item.media.nil? || feed_item.media.spotify_uri.blank?) %>
+			<div class = "spotify_play">
+				<iframe src="https://embed.spotify.com/?uri=<%= feed_item.media.spotify_uri %>" width="250" height="80" frameborder="0" allowtransparency="true"></iframe>
+			</div>
+		<% end %>
+
 
 
 	<% end %>
@@ -44,8 +48,12 @@
 		<hr>
 	</div>
 
-	<div id="words">
-		<%= url_link(feed_item.content) %>
+	<div id="feed_content">
+		<% if feed_item.is_a? Micropost %>
+			<%= url_link(feed_item.content) %>
+		<% else %>
+			<%= url_link(Song.find_by(echonest_id: feed_item.media.echonest_id).artist.image_url) %>
+		<% end %>
 	</div>
 
 	<div id="timeago">

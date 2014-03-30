@@ -1,8 +1,13 @@
 <% provide(:title, 'Home') %>
-<!DOCTYPE html>
-<html>
+<style>
+
+
+</style>
+
 <% if signed_in? %>
-  <div class="sidebar">
+
+  <h1 id = "feed_title">Feed</h1>
+  <br>
     <aside class="span4">
       <section>
         <%= render 'shared/user_info' %>
@@ -14,11 +19,11 @@
         <%= render 'shared/micropost_form' %>
       </section>
     </aside>
-    
+
     <div id="wrapper">
       <%= render 'shared/feed' %>
     </div>
-  </div>
+  
 <% else %>
 	<div class="center hero-unit">
  		<img src="assets/logo.png" height="100" width="100">
@@ -27,4 +32,3 @@
   		<%= link_to "Sign up now!", signup_path , class: "btn btn-large btn-primary" %>
   	</div>
 <% end %>
-</html>

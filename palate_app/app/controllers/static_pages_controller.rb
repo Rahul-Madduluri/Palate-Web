@@ -30,7 +30,7 @@ class StaticPagesController < ApplicationController
 	            current_user.palate_recommendations.create!(content: post_content, media:new_song)
 	        end
       		@micropost  = current_user.microposts.build
-     		@feed_items = current_user.feed
+     		@feed_items = current_user.feed.take(15)
     	end
   	end
 
