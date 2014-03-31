@@ -19,19 +19,38 @@
 			<div class = "official_rating">
 				<% unless (feed_item.media.nil? || feed_item.media.official_rating.blank?) %>
 					<% for i in (1..(feed_item.media.official_rating*5).ciel) %>
-						<div class = "official_rating_dot">
+						<div class = "rating_dot">
 							<%= image_tag("greycircle.png") %>
 						</div>
 					<% end %>
 				<% end %>
-				<% for i in (0..3) %>
-					<div class = "official_rating_dot">
+				<% for i in (0..4) %>
+					<div class = "rating_dot">
 						<%= image_tag("greycircle.png") %>
 					</div>
 				<% end %>
 			</div>
+			<br>
+			<div class = "personal_rating">
+
+				<div class = "rating_dot">
+					<%= image_tag("red_dot.png") %>
+				</div>
+				<div class = "rating_dot">
+					<%= image_tag("yellow_dot.png") %>
+				</div>
+				<div class = "rating_dot">
+					<%= image_tag("green_dot.png") %>
+				</div>
+				<div class = "rating_dot">
+					<%= image_tag("blue_dot.png") %>
+				</div>
+				<div class = "rating_dot">
+					<%= image_tag("purple_dot.png") %>
+				</div>
+			</div>
 		</div>
-		<br><br>
+		<br>
 		<% unless (feed_item.media.nil? || feed_item.media.spotify_uri.blank?) %>
 			<div class = "spotify_play">
 				<iframe src="https://embed.spotify.com/?uri=<%= feed_item.media.spotify_uri %>" width="250" height="80" frameborder="0" allowtransparency="true"></iframe>
