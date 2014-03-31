@@ -1,10 +1,15 @@
-<%= link_to gravatar_for(current_user, size: 52), current_user %>
+<div id = "feed_profile_pic">
+	<%= link_to gravatar_for(current_user, size: 52), current_user %>
+</div>
+
 <h1>
-  <%= current_user.name %>
+	<span id = "feed_profile_name">
+	  <%= link_to current_user.name, current_user, {style: 'color:#666666'} %>
+	</span>
 </h1>
-<span>
-  <%= link_to "view my profile", current_user %>
-</span>
+
+<!--
 <span>
   <%= pluralize(current_user.microposts.count, "micropost") %>
 </span>
+-->
