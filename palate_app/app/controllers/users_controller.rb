@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @user_feed_items  = @user.microposts.take(20)
     @adventurousness
     @instinctiveness
     @pace

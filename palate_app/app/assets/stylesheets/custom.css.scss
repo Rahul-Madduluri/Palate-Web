@@ -249,7 +249,7 @@ input {
 
   height: 125px;
   width: 1000px;
-  background: #DFDFDF;
+  background: #D0D0D0;
   border-radius: 10px;
   margin: auto;
   padding-top: 5px;
@@ -257,7 +257,20 @@ input {
 
 }
 
-#column_1_user {
+.column_1_user {
+  -webkit-column-count: 1;
+  -webkit-column-gap: 10px;
+  -webkit-column-fill: balance;
+  -moz-column-count: 1;
+  -moz-column-gap: 10px;
+  -moz-column-fill: balance;
+  column-count: 1;
+  column-gap: 15px;
+  column-fill: balance;
+  float: left;
+}
+
+.column_2_user {
   -webkit-column-count: 1;
   -webkit-column-gap: 10px;
   -webkit-column-fill: balance;
@@ -268,6 +281,7 @@ input {
   column-gap: 15px;
   column-fill: balance;
 }
+
 
 .pin_user {
   display: inline-block;
@@ -283,7 +297,7 @@ input {
   /*background: -webkit-linear-gradient(45deg, #FFF, #DFDFDF); */
   background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
   width: 500px;
-  border-radius: 10px;
+  border-radius: 3px;
   opacity: 1;
  
   
@@ -296,8 +310,8 @@ input {
 
 .profile_bits {
 
-  height: 100px;
-  width: 100px;
+  height: 105px;
+  width: 105px;
   background: #1E90FF;
   margin: 10px 10px 10px 10px;
   border-radius: 10px;
@@ -306,8 +320,8 @@ input {
 .profile_bits_text {
   font-family: Impact;
   font-size: 50px;
-  color: #DCDCDC;
-  margin: 10px 10px 10px 10px;
+  color: #D0D0D0;
+  margin: 10px 10px 10px 5px;
   padding: 40px 10px 10px 2px;
 }
 
@@ -315,8 +329,7 @@ input {
 }
 
 
-#five_songs {
-
+#five_artists {
 }
 
 
@@ -333,34 +346,44 @@ input {
 }
 
 .profile_page_movie {
-  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 0px;
 }
 
 .profile_page_movie_poster {
-  height: 150px;
-  width: 100px;
+  height: 120px;
+  width: 80px;
   float: left;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .profile_page_movie_title {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 12px;
+  margin-bottom: 0px;
+  display: block;
 }
 
 .profile_page_artist {
-  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 0px;
 }
 
 .profile_page_artist_poster {
-  height: 150px;
-  width: 100px;
+  height: 100px;
+  width: 80px;
   float: left;
   margin-right: 20px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 .profile_page_artist_name {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 12px;
+  margin-top: 0px;
+  display: block;
 }
 
 

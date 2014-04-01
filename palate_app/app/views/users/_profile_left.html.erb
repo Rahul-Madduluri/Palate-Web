@@ -1,110 +1,108 @@
-<div id="column_1_user">
-		<div class="pin_user">
-			<div class = "span4" id= "five_movies" >
-				<div class = "five_text">
-					Top 5 Movies <br><br>
-				</div>
-
-				<div class="profile_page_movie">
-					<span class = "profile_page_movie_poster">
-						<%= image_tag(Movie.first.url) %>
-					</span>
-					<span class = "profile_page_movie_title">
-						<%= Movie.first.title %>
-					</span>
-				</div>
-				<div class = "profile_page_movie">
-					<span class = "profile_page_movie_poster">
-						<%= image_tag((Movie.take(2))[1].url) %>
-					</span>
-					<span class = "profile_page_movie_title">
-						<%= Movie.take(2)[1].title %>
-					</span>
-				</div>
-				<div class = "profile_page_movie">
-					<span class = "profile_page_movie_poster">
-						<%= image_tag((Movie.take(3))[2].url) %>
-					</span>
-					<span class = "profile_page_movie_title">
-						<%= Movie.take(3)[2].title %>
-					</span>
-				</div>
-				<div class = "profile_page_movie">
-					<span class = "profile_page_movie_poster">
-						<%= image_tag((Movie.take(4))[3].url) %>
-					</span>
-					<span class = "profile_page_movie_title">
-						<%= Movie.take(4)[3].title %>
-					</span>
-				</div>
-				<div class = "profile_page_movie" >
-					<span class = "profile_page_movie_poster">
-						<%= image_tag((Movie.take(5))[4].url) %>
-					</span>
-					<span class = "profile_page_movie_title">
-						<%= Movie.take(5)[4].title %>
-					</span>
-				</div>
-			</div>
+<div class="pin_user">
+	<div  id= "five_movies" >
+		<div class = "five_text">
+			Top 5 Movies <br><br>
 		</div>
 
-		<br><br>
-
-		<div class="pin_user">
-			<div class= "span4" id = "five_songs" >
-				<div class = "five_text">
-					Top 5 Artists
-				</div>
-				<div class = "profile_page_artist">
-					<span class = "profile_page_artist_poster">
-						<%= image_tag(Artist.first.image_url) %>
-					</span>
-					<span class = "profile_page_artist_name">
-						<%= Artist.first.name %>
-					</span>
-				</div>
-				<div class = "profile_page_artist">
-					<span class = "profile_page_artist_poster">
-						<%= image_tag((Artist.take(2))[1].image_url) %>
-					</span>
-					<span class = "profile_page_artist_name">
-						<%= Artist.take(2)[1].name %>
-					</span>
-				</div>
-				<div class = "profile_page_artist">
-					<span class = "profile_page_artist_poster">
-						<%= image_tag((Artist.take(3))[2].image_url) %>
-					</span>
-					<span class = "profile_page_artist_name">
-						<%= Artist.take(3)[2].name %>
-					</span>
-				</div>
-				<div class = "profile_page_artist">
-					<span class = "profile_page_artist_poster">
-						<%= image_tag((Artist.take(4))[3].image_url) %>
-					</span>
-					<span class = "profile_page_artist_name">
-						<%= Artist.take(4)[3].name %>
-					</span>
-				</div>
-				<div class = "profile_page_artist">
-					<span class = "profile_page_artist_poster">
-						<%= image_tag((Artist.take(5))[4].image_url) %>
-					</span>
-					<span class = "profile_page_artist_name">
-						<%= Artist.take(5)[4].name %>
-					</span>
-				</div>
-			</div>
+		<div class="profile_page_movie span1">
+			<span class = "profile_page_movie_poster">
+				<%= image_tag(Movie.first.url) %>
+			</span>
+			<span class = "profile_page_movie_title">
+				<%= Movie.first.title %>
+			</span>
 		</div>
-
-		<br><br>
-
-		<div class="pin_user">
-			<div class= "span4" >
-				<div class = "five_text" id = "five_songs">
-					Most Similar Celebs
-				</div>
-			</div>
+		<div class = "profile_page_movie span1">
+			<span class = "profile_page_movie_poster">
+				<%= image_tag((Movie.take(2))[1].url) %>
+			</span>
+			<span class = "profile_page_movie_title">
+				<%= Movie.take(2)[1].title %>
+			</span>
+		</div>
+		<div class = "profile_page_movie span1">
+			<span class = "profile_page_movie_poster">
+				<%= image_tag((Movie.take(3))[2].url) %>
+			</span>
+			<span class = "profile_page_movie_title">
+				<%= Movie.take(3)[2].title %>
+			</span>
+		</div>
+		<div class = "profile_page_movie span1">
+			<span class = "profile_page_movie_poster">
+				<%= image_tag((Movie.take(4))[3].url) %>
+			</span>
+			<span class = "profile_page_movie_title">
+				<%= Movie.take(4)[3].title %>
+			</span>
+		</div>
+		<div class = "profile_page_movie span1" >
+			<span class = "profile_page_movie_poster">
+				<%= image_tag((Movie.take(5))[4].url) %>
+			</span>
+			<span class = "profile_page_movie_title">
+				<%= Movie.take(5)[4].title %>
+			</span>
 		</div>
 	</div>
+</div>
+
+<br><br>
+
+<div class="pin_user">
+	<div id = "five_artists" >
+		<div class = "five_text">
+			Top 5 Artists
+		</div>
+		<div class = "profile_page_artist span1">
+			<span class = "profile_page_artist_poster">
+				<%= image_tag(Artist.first.image_url) %>
+			</span>
+			<span class = "profile_page_artist_name">
+				<%= Artist.first.name %>
+			</span>
+		</div>
+		<div class = "profile_page_artist span1">
+			<span class = "profile_page_artist_poster">
+				<%= image_tag((Artist.take(2))[1].image_url) %>
+			</span>
+			<span class = "profile_page_artist_name">
+				<%= Artist.take(2)[1].name %>
+			</span>
+		</div>
+		<div class = "profile_page_artist span1">
+			<span class = "profile_page_artist_poster">
+				<%= image_tag((Artist.take(3))[2].image_url) %>
+			</span>
+			<span class = "profile_page_artist_name">
+				<%= Artist.take(3)[2].name %>
+			</span>
+		</div>
+		<div class = "profile_page_artist span1">
+			<span class = "profile_page_artist_poster">
+				<%= image_tag((Artist.take(4))[3].image_url) %>
+			</span>
+			<span class = "profile_page_artist_name">
+				<%= Artist.take(4)[3].name %>
+			</span>
+		</div>
+		<div class = "profile_page_artist span1">
+			<span class = "profile_page_artist_poster">
+				<%= image_tag((Artist.take(5))[4].image_url) %>
+			</span>
+			<span class = "profile_page_artist_name">
+				<%= Artist.take(5)[4].name %>
+			</span>
+		</div>
+	</div>
+</div>
+
+<br><br>
+
+<div class="pin_user">
+	<div class= "span4" >
+		<div class = "five_text" id = "five_celebs">
+			Most Similar Celebs
+		</div>
+	</div>
+</div>
