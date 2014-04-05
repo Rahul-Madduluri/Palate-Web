@@ -33,11 +33,15 @@ describe User do
   it { should respond_to(:reverse_relationships) }
   it { should respond_to(:followers) }
 
-  #relationships with artists
+  #relationships with artists and songs
   it { should respond_to(:user_artists) }
   it { should respond_to(:artists)}
   it { should respond_to(:listening_to?) }
   it { should respond_to(:listen_to!) }
+  it { should respond_to(:user_songs) }
+  it { shoudl respond_to(:songs) }
+  it { should respond_to(:listening_to_song?) }
+  it { should respond_to(:listen_to_song!) }
 
   #relationship with movies
   it { should respond_to(:user_movies) }
@@ -270,6 +274,25 @@ describe User do
     end
 
   end
+
+  describe "listening to song" do
+
+    let(:song) { FactoryGirl.create(:song) }
+    before do
+      @user.save
+      @user.listen_to_song!(song)
+    end
+
+    it { should be_listening_to(song) }
+    its(:songs) { should  include(song) }
+
+    describe "listened to song" do
+      subject { song }
+      its(:users) { should include(@user) }
+    end
+
+  end
+
 
   describe "watching" do
 

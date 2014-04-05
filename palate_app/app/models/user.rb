@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
     has_many :user_artists, dependent: :destroy
     has_many :artists, through: :user_artists
 
+    #song relationships
+    has_many :user_songs, dependent: :destroy
+    has_many :songs, through: :user_songs
+
+
     #movie relationships
     has_many :user_movies, dependent: :destroy
     has_many :movies, through: :user_movies
@@ -76,6 +81,14 @@ class User < ActiveRecord::Base
 
     def listen_to!(artist)
         user_artists.create!(artist_id: artist.id)
+    end
+
+    def listening_to_song?(song)
+        user_songs.find_by(song_id: song.id)
+    end
+
+    def listen_to_song!(song)
+        user_songs.create!(song_id: song.id)
     end
 
 
