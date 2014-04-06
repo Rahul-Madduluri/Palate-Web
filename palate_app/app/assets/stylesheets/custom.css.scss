@@ -594,6 +594,36 @@ aside {
    position: absolute;
 }
 
+.pages {
+  width: 80px;
+  position: relative;
+}
+
+.pages_option {
+  color: #666666;
+  font-size: 16px;
+  font-family: "HelveticaNeue-Light", "HelveticaNeue", "Helvetica", "Arial";
+  margin-left: 10px;
+}
+
+#movies_page {
+
+}
+
+#music_page {
+
+}
+
+#select_bar {
+  position: relative;
+  background-color : #0099FF;
+  height: 20px;
+  width: 7px;
+  float: right;
+
+}
+
+
 
 
 

@@ -1,0 +1,24 @@
+<div class = "pages">
+	<div id = "select_bar">
+	</div>
+	<div class = "pages_option" id = "movies_page">
+		Movies
+	</div>
+	<br>
+	<div class = "pages_option" id = "music_page">
+		Music
+	</div>
+</div>
+
+<script>
+	$('#movies_page').click( function() {
+		$('#select_bar').animate( {
+			'bottom': "0px"
+		});
+	});
+	$('#music_page').click( function() {
+		$('#select_bar').animate( {
+			'bottom': "-40px"
+		});
+	});
+</script>
