@@ -31,24 +31,9 @@
 				<% end %>
 			</div>
 			<br>
-			<div class = "personal_rating">
 
-				<span class = "rating_dot">
-					<%= image_tag("red_dot.png") %>
-				</span>
-				<span class = "rating_dot">
-					<%= image_tag("yellow_dot.png") %>
-				</span>
-				<span class = "rating_dot">
-					<%= image_tag("green_dot.png") %>
-				</span>
-				<span class = "rating_dot">
-					<%= image_tag("blue_dot.png") %>
-				</span>
-				<span class = "rating_dot">
-					<%= image_tag("purple_dot.png") %>
-				</span>
-			</div>
+			<%= render partial: 'shared/dot_rating', locals: { media: feed_item.media } %>
+
 		</div>
 		<br>
 		<% unless (feed_item.media.nil? || feed_item.media.spotify_uri.blank?) %>
@@ -56,8 +41,6 @@
 				<iframe src="https://embed.spotify.com/?uri=<%= feed_item.media.spotify_uri %>" width="250" height="80" frameborder="0" allowtransparency="true"></iframe>
 			</div>
 		<% end %>
-
-
 
 	<% end %>
 
@@ -88,5 +71,79 @@
 	<% end %>
 
 </div>
+
+<script>
+	// Variable to set the duration of the animation
+	
+	// Handle the hover events
+	$(".red_dot").hover(function() {
+		$(this).siblings().stop().fadeOut();
+	},
+	function() {
+		$(this).siblings().fadeIn();
+	});
+
+	$(".yellow_dot").hover(function() {
+		$(this).siblings(".green_dot").stop().fadeOut();
+		$(this).siblings(".blue_dot").stop().fadeOut();
+		$(this).siblings(".purple_dot").stop().fadeOut();
+	},
+	function() {
+		$(this).siblings(".green_dot").fadeIn();
+		$(this).siblings(".blue_dot").fadeIn();
+		$(this).siblings(".purple_dot").fadeIn();
+	});
+
+	$(".green_dot").hover(function() {
+		$(this).siblings(".blue_dot").stop().fadeOut();
+		$(this).siblings(".purple_dot").stop().fadeOut();
+	},
+	function() {
+		$(this).siblings(".blue_dot").fadeIn();
+		$(this).siblings(".purple_dot").fadeIn();
+	});
+
+	$(".blue_dot").hover(function() {
+		$(this).siblings(".purple_dot").stop().fadeOut();
+	},
+	function() {
+		$(this).siblings(".purple_dot").fadeIn();
+	});
+	/*
+	// Prevent the click event and show the rating
+	$(".red_dot").click(function() {
+		$(this).unbind('mouseenter mouseleave');
+		$(this).siblings().unbind('mouseenter mouseleave');
+		$(this).unbind('click');
+		$(this).siblings().unbind('click');
+	});
+
+	$(".yellow_dot").click(function() {
+		$(this).unbind('mouseenter mouseleave');
+		$(this).siblings().unbind('mouseenter mouseleave');
+		$(this).unbind('click');
+		$(this).siblings().unbind('click');
+	});
+
+	$(".green_dot").click(function() {
+		$(this).unbind('mouseenter mouseleave');
+		$(this).siblings().unbind('mouseenter mouseleave');
+		$(this).unbind('click');
+		$(this).siblings().unbind('click');
+	});
+
+	$(".blue_dot").click(function() {
+		$(this).unbind('mouseenter mouseleave');
+		$(this).siblings().unbind('mouseenter mouseleave');
+		$(this).unbind('click');
+		$(this).siblings().unbind('click');
+	});
+	*/
+
+
+	
+
+      
+</script>
 
 

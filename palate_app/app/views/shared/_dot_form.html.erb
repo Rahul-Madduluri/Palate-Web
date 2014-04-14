@@ -1,0 +1,11 @@
+<% if media.is_a? Song %>
+	<%= form_for(current_user.user_songs.build(song_id: media.id, personal_rating: rating),
+	             remote: true) do |f| %>
+	  <div><%= f.hidden_field :song_id %></div>
+	  <div><%= f.hidden_field :personal_rating %></div>
+	  <div>
+	  	<%= image_submit_tag("#{dot_png}.png") %>
+	  </div>
+	<% end %>
+<% elsif media.is_a? Movie %>
+<% end %>

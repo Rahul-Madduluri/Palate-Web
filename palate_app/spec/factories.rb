@@ -29,6 +29,7 @@ FactoryGirl.define do
 
   factory :song do
     title "Holy Grail"
+    echonest_id "echonest_id"
     artist
   end
 

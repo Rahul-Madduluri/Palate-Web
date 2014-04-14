@@ -9,8 +9,12 @@ PalateApp::Application.routes.draw do
   resources :microposts, only: [:create, :destroy]
   resources :palate_recommendations, only: :create
   resources :relationships, only: [:create, :destroy]
+  resources :user_songs, only: [:create, :update]
 
   resources :movies do
+  end
+
+  resource :artists do
   end
 
   root  'static_pages#home'

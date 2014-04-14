@@ -60,6 +60,24 @@ class User < ActiveRecord::Base
   	end
 
 
+    #rate media
+    def rated?(media)
+        if (media.is_a? Song)
+            result =  user_songs.find_by(song_id: media.id).present?
+        elsif (media.is_a? Movie)
+            result =  user_movies.find_by(movie_id: media.id).present?
+        end
+        result
+    end
+
+    def rate!(media, rating)
+        if (media.is_a? Song)
+            user_songs.find_by(song_id: media.id).update_attribute(:personal_rating, rating)
+        elsif (media.is_a? Movie)
+            user_movies.find_by(movie_id: media.id).update_attribute(:personal_rating, rating)
+        end  
+    end
+
     # following other users
     def following?(other_user)
         relationships.find_by(followed_id: other_user.id)
@@ -80,7 +98,9 @@ class User < ActiveRecord::Base
     end
 
     def listen_to!(artist)
-        user_artists.create!(artist_id: artist.id)
+        unless (listening_to?(artist) )
+            user_artists.create!(artist_id: artist.id)
+        end
     end
 
     def listening_to_song?(song)
@@ -88,7 +108,9 @@ class User < ActiveRecord::Base
     end
 
     def listen_to_song!(song)
-        user_songs.create!(song_id: song.id)
+        unless (listening_to_song?(song) )
+            user_songs.create!(song_id: song.id)
+        end
     end
 
 
@@ -107,27 +129,6 @@ class User < ActiveRecord::Base
     def feed
         array = PalateRecommendation.for_user(self).zip(Micropost.from_users_followed_by(self)).flatten.compact
         array
-    end
-
-    
-    def add_firstbite(movie, userID)
-
-        current_user = User.find_by(id: userID)
-
-        adventurousness = movie.adventurousness/20
-        instinctiveness = movie.instinctiveness/20
-        pace = movie.pace/20
-        valence = movie.valence/20
-        freshness = movie.freshness/20
-
-        current_user.adventurousness_affinity += adventurousness
-        current_user.instinctiveness_affinity += instinctiveness
-        current_user.pace_affinity += pace
-        current_user.valence_affinity += valence
-        current_user.freshness_affinity += freshness
-
-        current_user.update_attributes(adventurousness_affinity: adventurousness, instinctiveness_affinity: instinctiveness, pace_affinity: pace, valence_affinity: valence, freshness_affinity: freshness)
-
     end
 
 

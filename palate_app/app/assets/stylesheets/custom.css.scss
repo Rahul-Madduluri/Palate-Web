@@ -578,20 +578,32 @@ aside {
   margin: 1px 1px 1px 1px;
 }
 
+.rating_dot input
+{
+  height: 8px;
+  width: 8px;
+  float: left;
+  margin: 1px 1px 1px 1px;
+  border: 0;
+}
+
 
 .personal_rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-}
-.personal_rating > span {
-  display: inline-block;
-  position: relative;
 }
 
-.personal_rating > span:hover:before,
-.personal_rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
+.red_dot {
+}
+
+.yellow_dot {
+}
+
+.green_dot {
+}
+
+.blue_dot {
+}
+
+.purple_dot {
 }
 
 .pages {

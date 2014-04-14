@@ -13,6 +13,7 @@ describe UserSong do
 
 		it { should respond_to (:user) }
 		it { should respond_to (:song) }
+		it { should respond_to (:personal_rating) }
 		its(:user) { should eq user }
 		its(:song) { should eq song }
 

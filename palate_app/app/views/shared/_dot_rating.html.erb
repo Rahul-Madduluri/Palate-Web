@@ -1,0 +1,17 @@
+<div class = "personal_rating">
+	<span class = "rating_dot red_dot">
+		<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.2, dot_png: 'red_dot' } %>
+	</span>
+	<span class = "rating_dot yellow_dot">
+		<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.4, dot_png: 'yellow_dot' } %>
+	</span>
+	<span class = "rating_dot green_dot">
+		<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.6, dot_png: 'green_dot' } %>
+	</span>
+	<span class = "rating_dot blue_dot">
+		<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.8, dot_png: 'blue_dot' } %>
+	</span>
+	<span class = "rating_dot purple_dot">
+		<%= render partial: 'shared/dot_form', locals: { media: media, rating: 1.0, dot_png: 'purple_dot' } %>
+	</span>
+</div>

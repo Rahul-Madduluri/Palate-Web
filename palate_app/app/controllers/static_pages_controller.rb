@@ -71,6 +71,30 @@ class StaticPagesController < ApplicationController
 		
 	end
 
+    
+    def update_personal_rating
+
+        media = Song.find_by(params[:media])
+        rating = params[:rating]
+        if (media.is_a? Song)
+            current_user.listen_to!(media.artist)
+            current_user.listen_to!(media)
+            #relationship = User_Song.find_by(user_id: current_user.id, song_id: media.id)
+            #relationship.update_attribute(:personal_rating, rating)
+
+        elsif (media.is_a? Movie)
+            current_user.watch!(media)
+            relationship = User_Movie.find_by(user_id: current_user.id, movie_id: media.id)
+            relationship.update_attribute(:personal_rating, rating)
+        end
+
+
+        respond_to do |format|
+            format.js
+            format.html
+        end
+    end
+
 
 
 
