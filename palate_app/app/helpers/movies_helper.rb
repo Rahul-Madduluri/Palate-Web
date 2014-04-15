@@ -102,7 +102,7 @@ module MoviesHelper
 		search_movie_and_create('Harry Potter and the Prisoner of Azkaban', 2004)
 		search_movie_and_create('The Wizard of Oz', 1939)
 		search_movie_and_create('Pulp Fiction', 1994)
-		search_movie_and_create('Star Wars', 1977)
+		search_movie_and_create('Star Wars: Episode IV - A New Hope', 1977)
 		search_movie_and_create('The Bourne Identity', 2002)
 		search_movie_and_create('When Harry Met Sally', 1989)
 		search_movie_and_create('Knocked Up', 2007)

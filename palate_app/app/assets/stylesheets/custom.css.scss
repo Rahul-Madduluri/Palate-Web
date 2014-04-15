@@ -646,7 +646,7 @@ aside {
 
 #firstbite_title {
   font: bold 30px "Century Schoolbook", Georgia, Times, sans-serif;
-  color: #fff;
+  color: black;
   line-height: 90%;
   margin-right: auto;
   margin-left: auto;
@@ -667,17 +667,19 @@ aside {
   margin-left: auto;
   margin-right: auto;
   text-transform: lowercase;
-  line-height: 145%;
-  font-size: 14pt;
+  font-size: 12pt;
   font-variant: small-caps;
-  padding-top: 475px;
   font-weight: bold;
+  margin-top: -30px;
+
 }
 
 
 .firstbite_movieposter {
-  height: 380px;
-  width: 300px;
+  height: 200px;
+  width: 110px;
+  margin-right: auto;
+  margin-left: auto;
 
 }
 
@@ -687,18 +689,16 @@ aside {
 }
 
 .movie_image {
-  zoom: 4;
-  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255,255,255,0.20)));
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(75%, transparent), to(rgba(255,255,255,0.35)));
  border:1px outset #ccc;
  
 }
 
 .movie_and_title {
   display: inline-block;
-  padding-left: 50px;
-  padding-right: 50px;
-  height: 600px;
-  width: 300px;
+  height: 225px;
+  width: 200px;
+
 }
 
 .movie_area {
@@ -706,23 +706,6 @@ aside {
   margin-right: auto;
 }
 
-#first_poster {
-  float: left;
-}
-
-#second_poster {
-  float: right;
-}
-
-#first_movie_and_title {
-  float: left;
-
-}
-
-#second_movie_and_title {
-  float: right;
-  
-}
 
 
 .question_mark {
@@ -744,3 +727,44 @@ aside {
 
 }
 
+#firsbite_options_container {
+
+}
+
+#firstbite_select_bar {
+  position: relative;
+  background-color : #0099FF;
+  height: 5px;
+  width: 78px;
+  margin-left: 237px;
+  margin-bottom: 5px;
+}
+
+.firstbite_option {
+  color: #666666;
+  font-size: 26px;
+  font-family: "HelveticaNeue-Light", "HelveticaNeue", "Helvetica", "Arial";
+  display:inline;
+  margin-right: 90px;
+}
+
+#firstbite_container {
+  position: relative;
+  left: 22px;
+}
+
+#movies_firstbite {
+  margin-left: 237px;
+}
+
+#music_firstbite {
+
+}
+
+#television_firstbite {
+
+}
+
+#events_firstbite {
+
+}

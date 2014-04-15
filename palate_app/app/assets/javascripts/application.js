@@ -15,5 +15,5 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
-//= stub jquery.onepage-scroll.js
+
 
