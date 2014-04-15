@@ -78,6 +78,19 @@ class User < ActiveRecord::Base
         end  
     end
 
+    def rating_for(media)
+        if (media.is_a? Song)
+            unless user_songs.find_by(song_id: media.id).nil?
+                result = user_songs.find_by(song_id: media.id).personal_rating
+            end
+        elsif (media.is_a? Movie)
+            unless user_movies.find_by(movie_id: media.id).nil?
+                result = user_movies.find_by(movie_id: media.id).personal_rating
+            end
+        end
+        result
+    end
+
     # following other users
     def following?(other_user)
         relationships.find_by(followed_id: other_user.id)
@@ -144,3 +157,4 @@ class User < ActiveRecord::Base
 
 
 end
+
