@@ -8,9 +8,11 @@
 	<div class = "pages_option" id = "music_page">
 		Music
 	</div>
+	<br>
 	<div class = "pages_option" id = "television_page">
 		Television
 	</div>
+	<br>
 	<div class = "pages_option" id = "events_page">
 		Events
 	</div>
@@ -25,6 +27,16 @@
 	$('#music_page').click( function() {
 		$('#select_bar').animate( {
 			'bottom': "-40px"
+		});
+	});
+	$('#television_page').click( function() {
+		$('#select_bar').animate( {
+			'bottom': "-80px"
+		});
+	});
+	$('#events_page').click( function() {
+		$('#select_bar').animate( {
+			'bottom': "-120px"
 		});
 	});
 </script>

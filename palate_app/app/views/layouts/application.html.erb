@@ -5,8 +5,6 @@
     <%= stylesheet_link_tag "application", media: "all",
                                            "data-turbolinks-track" => true %>
     <%= javascript_include_tag "jquery", "application", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "jquery.onepage-scroll.js" if params[:action] == "firstbite" %>
-    <%= stylesheet_link_tag    "onepage-scroll.css"       if params[:action] == "firstbite" %>
     <%= csrf_meta_tags %>
 
     <%= render 'layouts/shim' %>

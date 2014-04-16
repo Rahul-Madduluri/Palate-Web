@@ -25,7 +25,9 @@
 		$(this).siblings().stop().fadeOut();
 	},
 	function() {
-		$(this).siblings().fadeIn();
+		var media_rating = current_user.rating_for(media)
+		if (media_rating == 0.4)
+			$(this).siblings().fadeIn();
 	});
 
 	$(".yellow_dot").hover(function() {

@@ -1,4 +1,6 @@
-
+require 'active_support'
+require 'Base64'
+require 'open-uri'
 module MoviesHelper
 
 	def search_movie_and_create(aTitle, aYear)
@@ -122,7 +124,10 @@ module MoviesHelper
 
 
 	
-
+	def encode_url_to_64(url)
+		data = Base64.encode64(open(url) { |io| io.read })
+		uri = "data:image/jpg;base64,#{data}"
+	end
 
 end
 
