@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
 	end
 
 	def show
-		@movie = Movie.find_by(params[:id])
+		@movie = Movie.find(params[:id])
     	@user_feed_items  = current_user.microposts.take(20)
 	end
 
