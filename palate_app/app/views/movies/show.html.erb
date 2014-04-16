@@ -1,32 +1,47 @@
 <% provide(:title, @movie.title) %>
-<div class="imageSection  ">
-    <div class="imageWrap">
-      
-<img class = "targetImage" src="<%= encode_url_to_64(@movie.url) %>"/>
+<div class ="imageArea">
+    <div class="imageSection">
+        <div class="imageWrap">
+          
+            <img class = "targetImage" id="targetImage" src="<%= encode_url_to_64(@movie.url) %>"/>
 
+        </div>
+        <div id="movie_page_info">
+            <div id="movie_page_title"><%= @movie.title %></div>
+            <br>
+            <div id="movie_page_year"><%= @movie.year %></div>
+        </div>
 
+        <div class="right_banner">
+            <div class="rb_swatches" id="color_1"></div>
+            <div class="rb_swatches" id="color_2"></div>
+            <div class="rb_swatches" id="color_3"></div>
+            <div class="rb_swatches" id="color_4"></div>
+            <div class="rb_swatches" id="color_5"></div>
+            <div class="rb_swatches" id="color_6"></div>
+            <div class="rb_swatches" id="color_7"></div>
+            <div class="rb_swatches" id="color_8"></div>
+            <div class="rb_swatches" id="color_9"></div>
+            <div class="rb_swatches" id="color_10"></div>
+        </div>
     </div>
-    <div class="colors">
-      <div class="function dominantColor">
-        <h3>Dominant Color</h3>
-        <div class="swatches"></div>
-      </div>
-      <div class="function medianCutPalette clearfix">
-        <h3>Palette</h3>
-        <div class="swatches"></div>
-      </div>
+
+    <div class="ratingSection">
+        <div id="movie_page_critics_rating"><%= @movie.critics_rating %>%</div>
+        <div class="right_banner">
+            <div class="rb_swatches" id="color_1"></div>
+            <div class="rb_swatches" id="color_2"></div>
+            <div class="rb_swatches" id="color_3"></div>
+            <div class="rb_swatches" id="color_4"></div>
+            <div class="rb_swatches" id="color_5"></div>
+            <div class="rb_swatches" id="color_6"></div>
+            <div class="rb_swatches" id="color_7"></div>
+            <div class="rb_swatches" id="color_8"></div>
+            <div class="rb_swatches" id="color_9"></div>
+            <div class="rb_swatches" id="color_10"></div>
+        </div>
     </div>
-  </div>
-<div class = "profile_movie imageSection">
-	<div class = "profile_movieposter imageWrap" >
-		
-
-
-	</div>
-	<p class="profile_movie_title"><%= @movie.title %></p>
 </div>
-
-
 
 <div class = "column_1_movie">
 	<%= render 'profile_left' %>
@@ -742,8 +757,7 @@ function createAreaBasedPalette(sourceImage, colorCount) {
 };
      
 
-
-$('.targetImage').click( function() {
+$('.targetImage').load( function() {
    var image = $(this);
         var imageSection = image.closest('.imageSection');
         var appendColors = function (colors, root) {
@@ -760,12 +774,30 @@ $('.targetImage').click( function() {
         appendColors([dominantColor], dominantSwatch);
 
         // Palette
-        var colorCount =image.attr('data-colorcount') ? image.data('colorcount') : 10;
+        var colorCount =image.attr('data-colorcount') ? image.data('colorcount') : 11;
         var medianPalette = createPalette(image, colorCount);
         var medianCutPalette = imageSection.find('.medianCutPalette .swatches');
         appendColors(medianPalette, medianCutPalette);
 
-alert('working')
+        $('.right_banner #color_1').css('background-color', 'rgba('+ medianPalette[0] +', 1)');
+        $('.right_banner #color_2').css('background-color', 'rgba('+ medianPalette[1] +', 1)');
+        $('.right_banner #color_3').css('background-color', 'rgba('+ medianPalette[2] +', 1)');
+        $('.right_banner #color_4').css('background-color', 'rgba('+ medianPalette[3] +', 1)');
+        $('.right_banner #color_5').css('background-color', 'rgba('+ medianPalette[4] +', 1)');
+        $('.right_banner #color_6').css('background-color', 'rgba('+ medianPalette[5] +', 1)');
+        $('.right_banner #color_7').css('background-color', 'rgba('+ medianPalette[6] +', 1)');
+        $('.right_banner #color_8').css('background-color', 'rgba('+ medianPalette[7] +', 1)');
+        $('.right_banner #color_9').css('background-color', 'rgba('+ medianPalette[8] +', 1)');
+        $('.right_banner #color_10').css('background-color', 'rgba('+ medianPalette[9] +', 1)');
+
+        $('.imageSection').css('background-color', 'rgba('+ medianPalette[0] +', 1)');
+        $('.ratingSection').css('background-color', 'rgba('+ medianPalette[0] +', 1)');
+        $('#movie_page_title').css('color', 'rgba('+ medianPalette[3] +', 1)')
+        $('#movie_page_year').css('color', 'rgba('+ medianPalette[2] +', 1)')
+        $('#movie_page_critics_rating').css('color', 'rgba('+ medianPalette[6] +', 1)')
+
+
+alert(medianPalette[0][2])
 });
 </script>
 

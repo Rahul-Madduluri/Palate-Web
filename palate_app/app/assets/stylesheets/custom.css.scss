@@ -440,7 +440,7 @@ aside {
 
 
 .container {
-  width:1050px;
+  width:1200px;
   margin-left: 100px;
 }
 
@@ -838,24 +838,47 @@ aside {
 
 /* adaptive background */
 
+.imageArea {
+  height:350px;
+  width: 1200px;
+  margin-bottom: 60px;
+  padding-top: 20px;
+
+
+}
 
 /* line 133, ../sass/app.sass */
 .imageSection {
-  margin-bottom: 80px;
+  margin-bottom: 50px;
+  margin-top: 25px;
+  height:300px;
+  width:800px;
   background: #fff;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   border-radius: 10px;
-  *zoom: 1;
+  display: inline-block;
+
 }
 /* line 38, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-.imageSection:after {
-  content: "";
-  display: table;
-  clear: both;
+
+
+.ratingSection {
+  float:right;
+  margin-top: 25px;
+  margin-right: 120px;
+  width:230px;
+  height:300px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  display: inline-block;
 }
+
 /* line 138, ../sass/app.sass */
 .imageSection .imageWrap {
   -moz-border-radius-topleft: 10px;
@@ -868,9 +891,10 @@ aside {
   -ms-border-bottom-left-radius: 10px;
   -o-border-bottom-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  width: 400px;
+
   height: 300px;
   float: left;
+  margin-top: -25px;
   margin-right: 20px;
 
 }
@@ -886,6 +910,8 @@ aside {
   -ms-border-bottom-left-radius: 10px;
   -o-border-bottom-left-radius: 10px;
   border-bottom-left-radius: 10px;
+
+  height: 350px;
 }
 /* line 147, ../sass/app.sass */
 .imageSection .colors {
@@ -912,6 +938,7 @@ aside {
   margin-right: 2px;
   background: #dddddd;
   float: left;
+  display: inline-block;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -961,13 +988,64 @@ aside {
   border-bottom-right-radius: 4px;
 }
 
+.rb_swatches {
+  background-color: #0f0;
+  height:30px;
+}
+
+.right_banner {
+  height:300;
+  width:10px;
+  float:right;
+}
+
+#movie_page_info {
+  float:left0
+}
+
+#movie_page_title {
+  margin-top: 40px;
+  margin-left: 30px;
+  font-size: 40px;
+  font-family: "Raleway-Medium";
+  float:left;
+
+}
+
+#movie_page_year {
+  float:left;
+  margin-top:20px;
+  margin-left: 30px;
+  font-size: 30px;
+  font-family: "Raleway-Light";
 
 
+}
 
+#movie_page_critics_rating {
+  margin-top: 40px;
+  margin-left: 30px;
+  font-size: 40px;
+  font-family: "Raleway";
+  float:left;
 
+}
 
+.right_banner #color_1 {
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -ms-border-top-right-radius: 4px;
+  -o-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+}
 
-
-
+.right_banner #color_10 {
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -ms-border-bottom-right-radius: 4px;
+  -o-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
 
 

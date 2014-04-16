@@ -14,7 +14,7 @@ PalateApp::Application.routes.draw do
   resources :movies do
   end
 
-  resource :artists do
+  resources :artists do
   end
 
   root  'static_pages#home'
