@@ -998,10 +998,13 @@ aside {
   height:300;
   width:10px;
   float:right;
+  display: inline-block;
 }
 
 #movie_page_info {
-  float:left0
+  height: 200px;
+  width: 500px;
+  display: inline-block;
 }
 
 #movie_page_title {
