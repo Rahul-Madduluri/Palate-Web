@@ -339,8 +339,7 @@ input {
 
 .five_text {
   margin-left: 15px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 25px;
+  font: 20px "Raleway-Medium", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
   margin-bottom: 10px;
 
 }
@@ -359,8 +358,7 @@ input {
 }
 
 .profile_page_movie_title {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 12px;
+  font: 12px "Raleway-Light", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
   margin-bottom: 0px;
   display: block;
 }
@@ -380,8 +378,7 @@ input {
 }
 
 .profile_page_artist_name {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 12px;
+  font: 12px "Raleway-Light", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
   margin-top: 0px;
   display: block;
 }
@@ -732,7 +729,11 @@ aside {
 
 
 #media_title {
+  /*
   font: bold 20px "Century Schoolbook", Georgia, Times, serif;
+  */
+  font: 20px "Raleway-Light";
+
 
 }
 

@@ -25,9 +25,9 @@
 		$(this).siblings().stop().fadeOut();
 	},
 	function() {
-		var media_rating = current_user.rating_for(media)
-		if (media_rating == 0.4)
-			$(this).siblings().fadeIn();
+		/*var media_rating = current_user.rating_for(media)
+		if (media_rating == 0.4)*/
+			$(this).siblings().stop().fadeIn();
 	});
 
 	$(".yellow_dot").hover(function() {
@@ -36,9 +36,9 @@
 		$(this).siblings(".purple_dot").stop().fadeOut();
 	},
 	function() {
-		$(this).siblings(".green_dot").fadeIn();
-		$(this).siblings(".blue_dot").fadeIn();
-		$(this).siblings(".purple_dot").fadeIn();
+		$(this).siblings(".green_dot").stop().fadeIn();
+		$(this).siblings(".blue_dot").stop().fadeIn();
+		$(this).siblings(".purple_dot").stop().fadeIn();
 	});
 
 	$(".green_dot").hover(function() {
@@ -46,15 +46,15 @@
 		$(this).siblings(".purple_dot").stop().fadeOut();
 	},
 	function() {
-		$(this).siblings(".blue_dot").fadeIn();
-		$(this).siblings(".purple_dot").fadeIn();
+		$(this).siblings(".blue_dot").stop().fadeIn();
+		$(this).siblings(".purple_dot").stop().fadeIn();
 	});
 
 	$(".blue_dot").hover(function() {
 		$(this).siblings(".purple_dot").stop().fadeOut();
 	},
 	function() {
-		$(this).siblings(".purple_dot").fadeIn();
+		$(this).siblings(".purple_dot").stop().fadeIn();
 	});
 	/*
 	// Prevent the click event and show the rating
