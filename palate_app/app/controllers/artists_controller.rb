@@ -23,8 +23,8 @@ class ArtistsController < ApplicationController
 
 
 	private
-		def movie_params
-			params.require(:movie).permit(:id, :title, :year, :adventurousness, :instinctiveness, :pace, :valence, :freshness, :critics_rating, :url, :official_rating)
+		def artist_params
+			params.require(:artist).permit(:id, :name, :twitter_handle, :echonest_id, :image_url, :spotify_uri)
 	    end
 
 
