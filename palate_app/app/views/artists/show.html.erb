@@ -1,14 +1,15 @@
-<% provide(:title, @movie.title) %>
+<% provide(:title, @artist.name) %>
 <div class ="imageArea">
     <div class="imageSection two-edge-shadow">
         <div class="imageWrap">
           
-            <img class = "targetImage one-edge-shadow" id="targetImage" src="<%= encode_url_to_64(@movie.url) %>"/>
+            <img class = "targetImage one-edge-shadow" id="targetImage" src="<%= encode_url_to_64(@artist.image_url) %>"/>
 
         </div>
-        <div id="movie_page_info">
-            <div id="movie_page_title"><%= @movie.title %></div>
-            <div id="movie_page_year"><%= @movie.year %></div>
+        <div id="artist_page_info">
+            <div id="artist_page_name"><%= @artist.name %></div>
+            <br>
+            <div id="artist_page_twitter_handle"><%= @artist.twitter_handle %></div>
         </div>
 
         <div class="right_banner">
@@ -26,7 +27,7 @@
     </div>
 
     <div class="ratingSection two-edge-shadow">
-        <div id="movie_page_critics_rating"><%= @movie.critics_rating %>%</div>
+        <div id="artist_page_id"><%= @artist.id %></div>
         <div class="right_banner">
             <div class="rb_swatches" id="color_1"></div>
             <div class="rb_swatches" id="color_2"></div>
@@ -42,10 +43,10 @@
     </div>
 </div>
 
-<div class = "column_1_movie">
+<div class = "column_1_artist">
 	<%= render 'profile_left' %>
 </div>
-<div class = "column_2_movie">
+<div class = "column_2_artist">
 	<%= render 'profile_right' %>
 </div>
 
@@ -791,9 +792,9 @@ $('.targetImage').load( function() {
 
         $('.imageSection').css('background-color', 'rgba('+ medianPalette[0] +', 1)');
         $('.ratingSection').css('background-color', 'rgba('+ medianPalette[0] +', 1)');
-        $('#movie_page_title').css('color', 'rgba('+ medianPalette[3] +', 1)')
-        $('#movie_page_year').css('color', 'rgba('+ medianPalette[2] +', 1)')
-        $('#movie_page_critics_rating').css('color', 'rgba('+ medianPalette[6] +', 1)')
+        $('#artist_page_name').css('color', 'rgba('+ medianPalette[3] +', 1)')
+        $('#artist_page_twitter_handle').css('color', 'rgba('+ medianPalette[2] +', 1)')
+        $('#artist_page_id').css('color', 'rgba('+ medianPalette[6] +', 1)')
 
 });
 </script>
