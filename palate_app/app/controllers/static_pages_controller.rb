@@ -31,6 +31,7 @@ class StaticPagesController < ApplicationController
 	        end
       		@micropost  = current_user.microposts.build
      		@feed_items = current_user.feed.take(15)
+            @users = User.take(6)
     	end
   	end
 

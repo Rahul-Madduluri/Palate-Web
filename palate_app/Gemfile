@@ -14,6 +14,9 @@ gem 'echowrap'
 # rottentomatoes
 gem 'rottentomatoes'
 
+# spotify
+gem 'hallon'
+
 # link_url
 gem 'url_link'
 
