@@ -1,4 +1,4 @@
-<div class = "personal_rating">
+<div class = "personal_rating" id = "<%= media.title %>">
 	<span class = "rating_dot red_dot">
 		<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.2, dot_png: 'red_dot' } %>
 	</span>
@@ -18,16 +18,79 @@
 
 
 <script>
-	// Variable to set the duration of the animation
+	$(this).load( function() {
+ 		if ($('.purple_dot').parent().attr('id') == "<%= media.title %>")
+ 		{
+ 			if (<%= current_user.rated?(media) %>)
+			{
+ 				var media_rating = <%= current_user.rating_for(media) %>;
+ 				//alert(media_rating);
+ 				//alert("<%= media.title %>");
+ 				if (media_rating < 1)
+ 				{
+ 					$('.purple_dot').stop().fadeOut();
+ 
+ 					if (media_rating < 0.8)
+ 					{
+ 						$('.purple_dot').siblings('.blue_dot').stop().fadeOut();
+ 
+ 						if (media_rating < 0.6)
+ 						{
+ 							$('.purple_dot').siblings('.green_dot').stop().fadeOut();
+ 
+ 							if (media_rating < 0.4)
+ 							{
+								$('.purple_dot').siblings('.yellow_dot').stop().fadeOut();
+ 							}
+ 						}
+ 					}
+ 				}
+ 				
+ 			}
+ 			
+ 		}
+ 	});
+ 
 	
 	// Handle the hover events
 	$(".red_dot").hover(function() {
 		$(this).siblings().stop().fadeOut();
 	},
 	function() {
-		/*var media_rating = current_user.rating_for(media)
-		if (media_rating == 0.4)*/
-			$(this).siblings().stop().fadeIn();
+		if ($(this).parent().attr('id') == "<%= media.title %>")
+ 		{
+ 			if (<%= current_user.rated?(media) %>)
+ 			{
+ 				var media_rating = <%= current_user.rating_for(media) %>;
+ 				//alert(media_rating);
+ 				//alert("<%= media.title %>");
+ 				if (media_rating >= 0.4)
+ 				{
+ 					$(this).siblings('.yellow_dot').stop().fadeIn();
+ 				}
+ 				
+ 				if (media_rating >= 0.6)
+ 				{
+ 					$(this).siblings('.green_dot').stop().fadeIn();
+ 				}
+ 				if (media_rating >= 0.8)
+ 				{
+ 					$(this).siblings('.blue_dot').stop().fadeIn();
+ 				}
+ 				if (media_rating == 1.0)
+ 				{
+ 					$(this).siblings('.purple_dot').stop().fadeIn();
+ 				}
+ 				
+ 			}
+ 			else
+ 			{
+ 				$(this).siblings().stop().fadeIn();
+ 
+ 			}
+ 			
+ 		}
+ 
 	});
 
 	$(".yellow_dot").hover(function() {
@@ -36,9 +99,39 @@
 		$(this).siblings(".purple_dot").stop().fadeOut();
 	},
 	function() {
-		$(this).siblings(".green_dot").stop().fadeIn();
-		$(this).siblings(".blue_dot").stop().fadeIn();
-		$(this).siblings(".purple_dot").stop().fadeIn();
+		if ($(this).parent().attr('id') == "<%= media.title %>")
+ 		{
+ 			if (<%= current_user.rated?(media) %>)
+ 			{
+ 				var media_rating = <%= current_user.rating_for(media) %>;
+ 				//alert(media_rating);
+ 				//alert("<%= media.title %>");
+ 				if (media_rating < 0.4)
+ 				{
+ 					$(this).stop().fadeOut();
+ 				}
+ 				
+ 				if (media_rating >= 0.6)
+ 				{
+ 					$(this).siblings('.green_dot').stop().fadeIn();
+ 				}
+ 				if (media_rating >= 0.8)
+ 				{
+ 					$(this).siblings('.blue_dot').stop().fadeIn();
+ 				}
+ 				if (media_rating == 1.0)
+ 				{
+ 					$(this).siblings('.purple_dot').stop().fadeIn();
+ 				}
+ 				
+ 			}
+ 			else
+ 			{
+ 				$(this).siblings().stop().fadeIn();
+ 
+ 			}
+ 			
+ 		}
 	});
 
 	$(".green_dot").hover(function() {
@@ -46,46 +139,112 @@
 		$(this).siblings(".purple_dot").stop().fadeOut();
 	},
 	function() {
-		$(this).siblings(".blue_dot").stop().fadeIn();
-		$(this).siblings(".purple_dot").stop().fadeIn();
+		if ($(this).parent().attr('id') == "<%= media.title %>")
+ 		{
+ 			if (<%= current_user.rated?(media) %>)
+ 			{
+ 				var media_rating = <%= current_user.rating_for(media) %>;
+ 				//alert(media_rating);
+ 				//alert("<%= media.title %>");
+ 				if (media_rating < 0.6)
+ 				{
+ 					$(this).stop().fadeOut();
+ 
+ 					if (media_rating < 0.4)
+ 					{
+ 						$(this).siblings('.yellow_dot').stop().fadeOut();
+ 					}
+ 				}
+ 				if (media_rating >= 0.8)
+ 				{
+ 					$(this).siblings('.blue_dot').stop().fadeIn();
+ 				}
+ 				if (media_rating == 1.0)
+ 				{
+ 					$(this).siblings('.purple_dot').stop().fadeIn();
+ 				}
+ 				
+ 			}
+ 			else
+ 			{
+ 				$(this).siblings().stop().fadeIn();
+ 
+ 			}
+ 			
+ 		}
 	});
 
 	$(".blue_dot").hover(function() {
 		$(this).siblings(".purple_dot").stop().fadeOut();
 	},
 	function() {
-		$(this).siblings(".purple_dot").stop().fadeIn();
-	});
-	/*
-	// Prevent the click event and show the rating
-	$(".red_dot").click(function() {
-		$(this).unbind('mouseenter mouseleave');
-		$(this).siblings().unbind('mouseenter mouseleave');
-		$(this).unbind('click');
-		$(this).siblings().unbind('click');
-	});
+		if ($(this).parent().attr('id') == "<%= media.title %>")
+ 		{
+ 			if (<%= current_user.rated?(media) %>)
+ 			{
+ 				var media_rating = <%= current_user.rating_for(media) %>;
+ 				//alert(media_rating);
+ 				//alert("<%= media.title %>");
+ 				if (media_rating < 0.8)
+ 				{
+ 					$(this).stop().fadeOut();
+					if (media_rating < 0.6)
+ 					{
+ 						$(this).siblings('.green_dot').stop().fadeOut();
 
-	$(".yellow_dot").click(function() {
-		$(this).unbind('mouseenter mouseleave');
-		$(this).siblings().unbind('mouseenter mouseleave');
-		$(this).unbind('click');
-		$(this).siblings().unbind('click');
-	});
+						if (media_rating < 0.4)
+ 						{
+ 							$(this).siblings('.yellow_dot').stop().fadeOut();
+ 						}
+ 					}
+ 				}
+ 				if (media_rating == 1.0)
+ 				{
+ 					$(this).siblings('.purple_dot').stop().fadeIn();
+ 				}
+ 				
+ 			}
+ 			else
+ 			{
+ 				$(this).siblings().stop().fadeIn();
 
-	$(".green_dot").click(function() {
-		$(this).unbind('mouseenter mouseleave');
-		$(this).siblings().unbind('mouseenter mouseleave');
-		$(this).unbind('click');
-		$(this).siblings().unbind('click');
+			}
+		}
 	});
-
-	$(".blue_dot").click(function() {
-		$(this).unbind('mouseenter mouseleave');
-		$(this).siblings().unbind('mouseenter mouseleave');
-		$(this).unbind('click');
-		$(this).siblings().unbind('click');
-	});
-	*/
+	$(".purple_dot").hover(function() {
+ 	},
+ 	function() {
+ 		if ($(this).parent().attr('id') == "<%= media.title %>")
+ 		{
+ 			if (<%= current_user.rated?(media) %>)
+ 			{
+ 				var media_rating = <%= current_user.rating_for(media) %>;
+ 				//alert(media_rating);
+ 				//alert("<%= media.title %>");
+ 				if (media_rating < 1)
+ 				{
+ 					$(this).stop().fadeOut();
+ 
+ 					if (media_rating < 0.8)
+ 					{
+ 						$(this).siblings('.blue_dot').stop().fadeOut();
+ 
+ 						if (media_rating < 0.6)
+ 						{
+ 							$(this).siblings('.green_dot').stop().fadeOut();
+ 
+ 							if (media_rating < 0.4)
+ 							{
+ 								$(this).siblings('.yellow_dot').stop().fadeOut();
+ 							}
+ 						}
+ 					}
+ 				}
+ 				
+ 			}
+ 			
+ 		}
+ 	});
 
 
 	
