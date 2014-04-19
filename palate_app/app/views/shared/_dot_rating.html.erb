@@ -18,79 +18,82 @@
 
 
 <script>
+
+
+
 	$(this).load( function() {
- 		if ($('.purple_dot').parent().attr('id') == "<%= media.title %>")
- 		{
- 			if (<%= current_user.rated?(media) %>)
+		if ($('.purple_dot').parent().attr('id') == "<%= media.title %>")
+		{
+			if (<%= current_user.rated?(media) %>)
 			{
- 				var media_rating = <%= current_user.rating_for(media) %>;
- 				//alert(media_rating);
- 				//alert("<%= media.title %>");
- 				if (media_rating < 1)
- 				{
- 					$('.purple_dot').stop().fadeOut();
- 
- 					if (media_rating < 0.8)
- 					{
- 						$('.purple_dot').siblings('.blue_dot').stop().fadeOut();
- 
- 						if (media_rating < 0.6)
- 						{
- 							$('.purple_dot').siblings('.green_dot').stop().fadeOut();
- 
- 							if (media_rating < 0.4)
- 							{
+				var media_rating = <%= current_user.rating_for(media) %>;
+				//alert(media_rating);
+				//alert("<%= media.title %>");
+				if (media_rating < 1)
+				{
+					$('.purple_dot').stop().fadeOut();
+
+					if (media_rating < 0.8)
+					{
+						$('.purple_dot').siblings('.blue_dot').stop().fadeOut();
+
+						if (media_rating < 0.6)
+						{
+							$('.purple_dot').siblings('.green_dot').stop().fadeOut();
+
+							if (media_rating < 0.4)
+							{
 								$('.purple_dot').siblings('.yellow_dot').stop().fadeOut();
- 							}
- 						}
- 					}
- 				}
- 				
- 			}
- 			
- 		}
- 	});
- 
-	
+							}
+						}
+					}
+				}
+
+			}
+
+		}
+	});
+
+
 	// Handle the hover events
 	$(".red_dot").hover(function() {
 		$(this).siblings().stop().fadeOut();
 	},
 	function() {
 		if ($(this).parent().attr('id') == "<%= media.title %>")
- 		{
- 			if (<%= current_user.rated?(media) %>)
- 			{
- 				var media_rating = <%= current_user.rating_for(media) %>;
- 				//alert(media_rating);
- 				//alert("<%= media.title %>");
- 				if (media_rating >= 0.4)
- 				{
- 					$(this).siblings('.yellow_dot').stop().fadeIn();
- 				}
- 				
- 				if (media_rating >= 0.6)
- 				{
- 					$(this).siblings('.green_dot').stop().fadeIn();
- 				}
- 				if (media_rating >= 0.8)
- 				{
- 					$(this).siblings('.blue_dot').stop().fadeIn();
- 				}
- 				if (media_rating == 1.0)
- 				{
- 					$(this).siblings('.purple_dot').stop().fadeIn();
- 				}
- 				
- 			}
- 			else
- 			{
- 				$(this).siblings().stop().fadeIn();
- 
- 			}
- 			
- 		}
- 
+		{
+			if (<%= current_user.rated?(media) %>)
+			{
+				var media_rating = <%= current_user.rating_for(media) %>;
+				//alert(media_rating);
+				//alert("<%= media.title %>");
+				if (media_rating >= 0.4)
+				{
+					$(this).siblings('.yellow_dot').stop().fadeIn();
+				}
+
+				if (media_rating >= 0.6)
+				{
+					$(this).siblings('.green_dot').stop().fadeIn();
+				}
+				if (media_rating >= 0.8)
+				{
+					$(this).siblings('.blue_dot').stop().fadeIn();
+				}
+				if (media_rating == 1.0)
+				{
+					$(this).siblings('.purple_dot').stop().fadeIn();
+				}
+
+			}
+			else
+			{
+				$(this).siblings().stop().fadeIn();
+
+			}
+
+		}
+
 	});
 
 	$(".yellow_dot").hover(function() {
@@ -100,38 +103,38 @@
 	},
 	function() {
 		if ($(this).parent().attr('id') == "<%= media.title %>")
- 		{
- 			if (<%= current_user.rated?(media) %>)
- 			{
- 				var media_rating = <%= current_user.rating_for(media) %>;
- 				//alert(media_rating);
- 				//alert("<%= media.title %>");
- 				if (media_rating < 0.4)
- 				{
- 					$(this).stop().fadeOut();
- 				}
- 				
- 				if (media_rating >= 0.6)
- 				{
- 					$(this).siblings('.green_dot').stop().fadeIn();
- 				}
- 				if (media_rating >= 0.8)
- 				{
- 					$(this).siblings('.blue_dot').stop().fadeIn();
- 				}
- 				if (media_rating == 1.0)
- 				{
- 					$(this).siblings('.purple_dot').stop().fadeIn();
- 				}
- 				
- 			}
- 			else
- 			{
- 				$(this).siblings().stop().fadeIn();
- 
- 			}
- 			
- 		}
+		{
+			if (<%= current_user.rated?(media) %>)
+			{
+				var media_rating = <%= current_user.rating_for(media) %>;
+				//alert(media_rating);
+				//alert("<%= media.title %>");
+				if (media_rating < 0.4)
+				{
+					$(this).stop().fadeOut();
+				}
+
+				if (media_rating >= 0.6)
+				{
+					$(this).siblings('.green_dot').stop().fadeIn();
+				}
+				if (media_rating >= 0.8)
+				{
+					$(this).siblings('.blue_dot').stop().fadeIn();
+				}
+				if (media_rating == 1.0)
+				{
+					$(this).siblings('.purple_dot').stop().fadeIn();
+				}
+
+			}
+			else
+			{
+				$(this).siblings().stop().fadeIn();
+
+			}
+
+		}
 	});
 
 	$(".green_dot").hover(function() {
@@ -140,38 +143,38 @@
 	},
 	function() {
 		if ($(this).parent().attr('id') == "<%= media.title %>")
- 		{
- 			if (<%= current_user.rated?(media) %>)
- 			{
- 				var media_rating = <%= current_user.rating_for(media) %>;
- 				//alert(media_rating);
- 				//alert("<%= media.title %>");
- 				if (media_rating < 0.6)
- 				{
- 					$(this).stop().fadeOut();
- 
- 					if (media_rating < 0.4)
- 					{
- 						$(this).siblings('.yellow_dot').stop().fadeOut();
- 					}
- 				}
- 				if (media_rating >= 0.8)
- 				{
- 					$(this).siblings('.blue_dot').stop().fadeIn();
- 				}
- 				if (media_rating == 1.0)
- 				{
- 					$(this).siblings('.purple_dot').stop().fadeIn();
- 				}
- 				
- 			}
- 			else
- 			{
- 				$(this).siblings().stop().fadeIn();
- 
- 			}
- 			
- 		}
+		{
+			if (<%= current_user.rated?(media) %>)
+			{
+				var media_rating = <%= current_user.rating_for(media) %>;
+				//alert(media_rating);
+				//alert("<%= media.title %>");
+				if (media_rating < 0.6)
+				{
+					$(this).stop().fadeOut();
+
+					if (media_rating < 0.4)
+					{
+						$(this).siblings('.yellow_dot').stop().fadeOut();
+					}
+				}
+				if (media_rating >= 0.8)
+				{
+					$(this).siblings('.blue_dot').stop().fadeIn();
+				}
+				if (media_rating == 1.0)
+				{
+					$(this).siblings('.purple_dot').stop().fadeIn();
+				}
+
+			}
+			else
+			{
+				$(this).siblings().stop().fadeIn();
+
+			}
+
+		}
 	});
 
 	$(".blue_dot").hover(function() {
@@ -179,77 +182,78 @@
 	},
 	function() {
 		if ($(this).parent().attr('id') == "<%= media.title %>")
- 		{
- 			if (<%= current_user.rated?(media) %>)
- 			{
- 				var media_rating = <%= current_user.rating_for(media) %>;
- 				//alert(media_rating);
- 				//alert("<%= media.title %>");
- 				if (media_rating < 0.8)
- 				{
- 					$(this).stop().fadeOut();
+		{
+			if (<%= current_user.rated?(media) %>)
+			{
+				var media_rating = <%= current_user.rating_for(media) %>;
+				//alert(media_rating);
+				//alert("<%= media.title %>");
+				if (media_rating < 0.8)
+				{
+					$(this).stop().fadeOut();
+
 					if (media_rating < 0.6)
- 					{
- 						$(this).siblings('.green_dot').stop().fadeOut();
+					{
+						$(this).siblings('.green_dot').stop().fadeOut();
 
 						if (media_rating < 0.4)
- 						{
- 							$(this).siblings('.yellow_dot').stop().fadeOut();
- 						}
- 					}
- 				}
- 				if (media_rating == 1.0)
- 				{
- 					$(this).siblings('.purple_dot').stop().fadeIn();
- 				}
- 				
- 			}
- 			else
- 			{
- 				$(this).siblings().stop().fadeIn();
+						{
+							$(this).siblings('.yellow_dot').stop().fadeOut();
+						}
+					}
+				}
+				if (media_rating == 1.0)
+				{
+					$(this).siblings('.purple_dot').stop().fadeIn();
+				}
 
 			}
+			else
+			{
+				$(this).siblings().stop().fadeIn();
+
+			}
+
 		}
 	});
+
+
 	$(".purple_dot").hover(function() {
- 	},
- 	function() {
- 		if ($(this).parent().attr('id') == "<%= media.title %>")
- 		{
- 			if (<%= current_user.rated?(media) %>)
- 			{
- 				var media_rating = <%= current_user.rating_for(media) %>;
- 				//alert(media_rating);
- 				//alert("<%= media.title %>");
- 				if (media_rating < 1)
- 				{
- 					$(this).stop().fadeOut();
- 
- 					if (media_rating < 0.8)
- 					{
- 						$(this).siblings('.blue_dot').stop().fadeOut();
- 
- 						if (media_rating < 0.6)
- 						{
- 							$(this).siblings('.green_dot').stop().fadeOut();
- 
- 							if (media_rating < 0.4)
- 							{
- 								$(this).siblings('.yellow_dot').stop().fadeOut();
- 							}
- 						}
- 					}
- 				}
- 				
- 			}
- 			
- 		}
- 	});
+	},
+	function() {
+		if ($(this).parent().attr('id') == "<%= media.title %>")
+		{
+			if (<%= current_user.rated?(media) %>)
+			{
+				var media_rating = <%= current_user.rating_for(media) %>;
+				//alert(media_rating);
+				//alert("<%= media.title %>");
+				if (media_rating < 1)
+				{
+					$(this).stop().fadeOut();
+
+					if (media_rating < 0.8)
+					{
+						$(this).siblings('.blue_dot').stop().fadeOut();
+
+						if (media_rating < 0.6)
+						{
+							$(this).siblings('.green_dot').stop().fadeOut();
+
+							if (media_rating < 0.4)
+							{
+								$(this).siblings('.yellow_dot').stop().fadeOut();
+							}
+						}
+					}
+				}
+
+			}
+
+		}
+	});
 
 
-	
 
       
 </script>
-
-
