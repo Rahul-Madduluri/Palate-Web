@@ -73,3 +73,43 @@
 </div>
 
 
+<script>
+	
+
+	/*
+	<%  if feed_item.is_a? Micropost %>
+	<% else %>
+		//refresh div when clicked 
+		$('.new_user_song').submit(function(e){
+			
+	        e.preventDefault();
+	        var form = $(this);
+	        var form_parent_parent = $(this).parent().parent();
+	        var post_url = form.attr('action');
+	        var post_data = form.serialize();
+	        var name = $(this).parent().parent().attr('id');
+	        //$('#loader3', form).html('<img src="../../images/ajax-loader.gif" />       Please wait...');
+	        $.ajax({
+	            type: 'POST',
+	            url: post_url, 
+	            data: post_data,
+	            success: function(msg) {
+	            	//alert($(form_parent_parent).attr('id'));
+	                $(form_parent_parent).html("<%= escape_javascript(render partial: 'shared/dot_rating', locals: { media: feed_item.media }) %>");
+	            }
+	        });
+			
+	    });
+	 <% end %>
+	 */
+
+
+
+
+      
+</script>
+
+
+
+
+

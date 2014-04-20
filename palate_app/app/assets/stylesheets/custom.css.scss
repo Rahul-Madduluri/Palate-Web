@@ -582,6 +582,7 @@ aside {
 .spotify_play {
 }
 
+/* ratings */
 .rating_dot
 {
   height: 8px;
@@ -596,7 +597,8 @@ aside {
   width: 8px;
   float: left;
   margin: 1px 1px 1px 1px;
-  border: 0;
+  border: none;
+  outline: none;
 }
 
 
@@ -618,6 +620,17 @@ aside {
 .purple_dot {
 }
 
+.hidden_dot {
+  opacity: 0;
+}
+
+
+
+
+
+
+
+/* left bar */
 .pages {
   width: 80px;
   position: relative;
@@ -682,15 +695,11 @@ aside {
 .movie_title {
   /*text-shadow: 2px 4px 3px ;*/
   color: #333;
-  font-family: "Hoefler Text", Georgia, Garamond, Times, serif;
-  letter-spacing:0.1em;
+  font-family: "Raleway","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
   text-align:center;
   margin-left: auto;
   margin-right: auto;
-  text-transform: lowercase;
   font-size: 12pt;
-  font-variant: small-caps;
-  font-weight: bold;
   margin-top: -30px;
 
 }
@@ -743,11 +752,12 @@ aside {
 }
 
 
+
 #media_title {
   /*
   font: bold 20px "Century Schoolbook", Georgia, Times, serif;
   */
-  font: 20px "Raleway-Light";
+  font: 20px "Raleway-Light","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
   color: #333333;
 
 
@@ -1031,7 +1041,7 @@ aside {
   margin-top: 40px;
   margin-left: 30px;
   font-size: 40px;
-  font-family: "Raleway-Medium";
+  font-family: "Raleway-Medium","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
   float:left;
   line-height: 50px;
 
@@ -1042,7 +1052,7 @@ aside {
   margin-top:55px;
   margin-left: 30px;
   font-size: 30px;
-  font-family: "Raleway-Light";
+  font-family: "Raleway-Light","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
 
 
 }
@@ -1051,7 +1061,7 @@ aside {
   margin-top: 40px;
   margin-left: 30px;
   font-size: 40px;
-  font-family: "Raleway";
+  font-family: "Raleway","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
   float:left;
 
 }
@@ -1110,7 +1120,7 @@ aside {
   margin-left: 30px;
   width: 250px;
   font-size: 40px;
-  font-family: "Raleway-Medium";
+  font-family: "Raleway-Medium","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
   float:left;
   height: 60px;
   line-height: 50px;
@@ -1123,7 +1133,7 @@ aside {
   margin-top:20px;
   margin-left: 30px;
   font-size: 30px;
-  font-family: "Raleway-Light";
+  font-family: "Raleway-Light","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
   line-height: 30px;
 
 
@@ -1133,7 +1143,7 @@ aside {
   margin-top: 40px;
   margin-left: 30px;
   font-size: 40px;
-  font-family: "Raleway";
+  font-family: "Raleway","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
   float:left;
 
 }
