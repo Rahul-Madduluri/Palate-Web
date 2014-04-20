@@ -1,0 +1,255 @@
+<div class = "personal_rating" id = "<%= media.title %>">
+
+
+	<% if (current_user.rated?(media) && current_user.rating_for(media) >= 0.2 ) %>  
+		<span class = "rating_dot red_dot rated">
+			<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.2, dot_png: 'red_dot' } %>
+		</span>
+	<% else %>
+		<span class = "rating_dot red_dot">
+			<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.2, dot_png: 'red_dot' } %>
+		</span>
+	<% end %>
+
+
+
+	<% if (current_user.rated?(media)) %>
+		<% if (current_user.rating_for(media) >= 0.4) %>
+			<span class = "rating_dot yellow_dot rated">
+				<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.4, dot_png: 'yellow_dot' } %>
+			</span>
+		<% else %>
+			<span class = "rating_dot yellow_dot hidden_dot">
+				<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.4, dot_png: 'yellow_dot' } %>
+			</span>
+		<% end %>
+	<% else %>
+		<span class = "rating_dot yellow_dot">
+			<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.4, dot_png: 'yellow_dot' } %>
+		</span>
+	<% end %>
+
+	<% if (current_user.rated?(media)) %>
+		<% if (current_user.rating_for(media) >= 0.6) %>
+			<span class = "rating_dot green_dot rated">
+				<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.6, dot_png: 'green_dot' } %>
+			</span>
+		<% else %>
+			<span class = "rating_dot green_dot hidden_dot">
+				<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.6, dot_png: 'green_dot' } %>
+			</span>
+		<% end %>
+	<% else %>
+		<span class = "rating_dot green_dot">
+			<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.6, dot_png: 'green_dot' } %>
+		</span>
+	<% end %>
+
+
+	<% if (current_user.rated?(media) ) %>
+		<% if (current_user.rating_for(media) >= 0.8) %>
+			<span class = "rating_dot blue_dot rated">
+				<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.8, dot_png: 'blue_dot' } %>
+			</span>
+		<% else %>
+			<span class = "rating_dot blue_dot hidden_dot">
+				<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.8, dot_png: 'blue_dot' } %>
+			</span>
+		<% end %>
+	<% else %>
+		<span class = "rating_dot blue_dot">
+			<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.8, dot_png: 'blue_dot' } %>
+		</span>
+	<% end %>
+
+
+	<% if (current_user.rated?(media) ) %>
+		<% if (current_user.rating_for(media) == 1) %>
+			<span class = "rating_dot purple_dot rated">
+				<%= render partial: 'shared/dot_form', locals: { media: media, rating: 1.0, dot_png: 'purple_dot' } %>
+			</span>
+		<% else %>
+			<span class = "rating_dot purple_dot hidden_dot">
+				<%= render partial: 'shared/dot_form', locals: { media: media, rating: 1.0, dot_png: 'purple_dot' } %>
+			</span>
+		<% end %>
+	<% else %>
+		<span class = "rating_dot purple_dot">
+			<%= render partial: 'shared/dot_form', locals: { media: media, rating: 1.0, dot_png: 'purple_dot' } %>
+		</span>
+	<% end %>
+
+</div>
+
+
+<script>
+// Handle the hover events
+	$(".red_dot").hover(function() {
+		$(this).siblings().addClass('hidden_dot');
+	},
+	function() {
+		if ( $(this).siblings().hasClass('rated') || $(this).hasClass('rated') )
+		{
+
+			if (! $(this).hasClass('rated'))
+			{
+				$(this).addClass('hidden_dot');
+			}
+
+
+			if (! $(this).hasClass('rated'))
+			{
+				$(this).addClass('hidden_dot');
+			}
+			$(this).siblings().each( function(i) {
+				if ( $(this).hasClass('rated') )
+				{
+					$(this).removeClass('hidden_dot');
+				}
+				else
+				{
+					$(this).addClass('hidden_dot');
+				}
+			});
+			
+		}
+		else
+		{
+			$(this).siblings().removeClass('hidden_dot');
+		}
+
+	});
+
+	$('.yellow_dot').hover( function() {
+		$(this).removeClass('hidden_dot');
+		$(this).siblings('.green_dot').addClass('hidden_dot');
+		$(this).siblings(".blue_dot").addClass('hidden_dot');
+		$(this).siblings('.purple_dot').addClass('hidden_dot');
+	},
+	function() {
+		if ( $(this).siblings().hasClass('rated') || $(this).hasClass('rated') )
+		{
+			if (! $(this).hasClass('rated'))
+			{
+				$(this).addClass('hidden_dot');
+			}
+
+
+			$(this).siblings().each( function(i) {
+				if ( $(this).hasClass('rated') )
+				{
+					$(this).removeClass('hidden_dot');
+				}
+				else
+				{
+					$(this).addClass('hidden_dot');
+				}
+			});
+			
+		}
+		else
+		{
+			$(this).siblings().removeClass('hidden_dot');
+		}
+	});
+
+	$('.green_dot').hover( function() {
+		$(this).removeClass('hidden_dot');
+		$(this).siblings('.yellow_dot').removeClass('hidden_dot');
+		$(this).siblings('.blue_dot').addClass('hidden_dot');
+		$(this).siblings('.purple_dot').addClass('hidden_dot');
+	},
+	function() {
+		if ( $(this).siblings().hasClass('rated') || $(this).hasClass('rated') )
+		{
+
+			if (! $(this).hasClass('rated'))
+			{
+				$(this).addClass('hidden_dot');
+			}
+
+
+			$(this).siblings().each( function(i) {
+				if ( $(this).hasClass('rated') )
+				{
+					$(this).removeClass('hidden_dot');
+				}
+				else
+				{
+					$(this).addClass('hidden_dot');
+				}
+			});
+			
+		}
+		else
+		{
+			$(this).siblings().removeClass('hidden_dot');
+		}
+	});
+
+	$('.blue_dot').hover( function() {
+		$(this).removeClass('hidden_dot');
+		$(this).siblings('.yellow_dot').removeClass('hidden_dot');
+		$(this).siblings('.green_dot').removeClass('hidden_dot');
+		$(this).siblings('.purple_dot').addClass('hidden_dot');
+	},
+	function () {
+		if ( $(this).siblings().hasClass('rated') || $(this).hasClass('rated') )
+		{
+			if (! $(this).hasClass('rated'))
+			{
+				$(this).addClass('hidden_dot');
+			}
+
+			$(this).siblings().each( function(i) {
+				if ( $(this).hasClass('rated') )
+				{
+					$(this).removeClass('hidden_dot');
+				}
+				else
+				{
+					$(this).addClass('hidden_dot');
+				}
+			});
+			
+		}
+		else
+		{
+			$(this).siblings().removeClass('hidden_dot');
+		}
+	});
+
+	$('.purple_dot').hover( function() {
+		$(this).removeClass('hidden_dot');
+		$(this).siblings().removeClass('hidden_dot');
+	},
+	function() {
+		if ( $(this).siblings().hasClass('rated') || $(this).hasClass('rated') )
+		{
+			if (! $(this).hasClass('rated'))
+			{
+				$(this).addClass('hidden_dot');
+			}
+
+			$(this).siblings().each( function(i) {
+				if ( $(this).hasClass('rated') )
+				{
+					$(this).removeClass('hidden_dot');
+				}
+				else
+				{
+					$(this).addClass('hidden_dot');
+				}
+			});
+			
+		}
+		else
+		{
+			$(this).siblings().removeClass('hidden_dot');
+		}
+	});
+
+
+
+
+</script>
