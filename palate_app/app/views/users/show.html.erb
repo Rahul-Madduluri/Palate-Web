@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
-<div class ="imageArea">
-    <div class="imageSection two-edge-shadow">
+<div class ="imageAreaUser">
+    <div class="imageSectionUser two-edge-shadow">
         <div class="imageWrap">
           	<% gravatar_id = Digest::MD5::hexdigest(@user.email.downcase) %>
     		<% gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}" %>
@@ -8,25 +8,25 @@
 
         </div>
         <div id="artist_page_info">
-            <div id="artist_page_name"><%= @user.name %></div>
-            <div id="artist_page_twitter_handle"><%= @user.email %></div>
+            <div id="user_page_name"><%= @user.name %></div>
+            <div id="user_page_twitter_handle"><%= @user.email %></div>
         </div>
 
-        <div class="right_banner">
-            <div class="rb_swatches" id="color_1"></div>
-            <div class="rb_swatches" id="color_2"></div>
-            <div class="rb_swatches" id="color_3"></div>
-            <div class="rb_swatches" id="color_4"></div>
-            <div class="rb_swatches" id="color_5"></div>
-            <div class="rb_swatches" id="color_6"></div>
-            <div class="rb_swatches" id="color_7"></div>
-            <div class="rb_swatches" id="color_8"></div>
-            <div class="rb_swatches" id="color_9"></div>
-            <div class="rb_swatches" id="color_10"></div>
+        <div class="right_banner_user">
+            <div class="rb_swatches_user" id="color_1"></div>
+            <div class="rb_swatches_user" id="color_2"></div>
+            <div class="rb_swatches_user" id="color_3"></div>
+            <div class="rb_swatches_user" id="color_4"></div>
+            <div class="rb_swatches_user" id="color_5"></div>
+            <div class="rb_swatches_user" id="color_6"></div>
+            <div class="rb_swatches_user" id="color_7"></div>
+            <div class="rb_swatches_user" id="color_8"></div>
+            <div class="rb_swatches_user" id="color_9"></div>
+            <div class="rb_swatches_user" id="color_10"></div>
         </div>
     </div>
 
-    <div class="ratingSection two-edge-shadow">
+    <div class="ratingSectionUser two-edge-shadow">
 
 
 			<div class = "profile_bits_text">
@@ -35,27 +35,28 @@
 
 
         
-        <div class="right_banner">
-            <div class="rb_swatches" id="color_1"></div>
-            <div class="rb_swatches" id="color_2"></div>
-            <div class="rb_swatches" id="color_3"></div>
-            <div class="rb_swatches" id="color_4"></div>
-            <div class="rb_swatches" id="color_5"></div>
-            <div class="rb_swatches" id="color_6"></div>
-            <div class="rb_swatches" id="color_7"></div>
-            <div class="rb_swatches" id="color_8"></div>
-            <div class="rb_swatches" id="color_9"></div>
-            <div class="rb_swatches" id="color_10"></div>
+        <div class="right_banner_user">
+            <div class="rb_swatches_user" id="color_1"></div>
+            <div class="rb_swatches_user" id="color_2"></div>
+            <div class="rb_swatches_user" id="color_3"></div>
+            <div class="rb_swatches_user" id="color_4"></div>
+            <div class="rb_swatches_user" id="color_5"></div>
+            <div class="rb_swatches_user" id="color_6"></div>
+            <div class="rb_swatches_user" id="color_7"></div>
+            <div class="rb_swatches_user" id="color_8"></div>
+            <div class="rb_swatches_user" id="color_9"></div>
+            <div class="rb_swatches_user" id="color_10"></div>
         </div>
     </div>
 </div>
-<div class="button-holder"><%= link_to "Profile Me!", firstbite_url , class: "btn btn-large btn-primary" %></div>
+
 <div class = "column_1_movie">
 	<%= render 'profile_left' %>
 </div>
 <div class = "column_2_movie">
 	<%= render 'profile_right' %>
 </div>
+<div class="button-holder"><%= link_to "Profile Me!", firstbite_url , class: "btn btn-large btn-primary" %></div>
 
 	<div>
 		<%= @adventurousness %>
@@ -802,21 +803,21 @@ $('.targetImage').load( function() {
         var medianCutPalette = imageSection.find('.medianCutPalette .swatches');
         appendColors(medianPalette, medianCutPalette);
 
-        $('.right_banner #color_1').css('background-color', 'rgba('+ medianPalette[0] +', 1)');
-        $('.right_banner #color_2').css('background-color', 'rgba('+ medianPalette[1] +', 1)');
-        $('.right_banner #color_3').css('background-color', 'rgba('+ medianPalette[2] +', 1)');
-        $('.right_banner #color_4').css('background-color', 'rgba('+ medianPalette[3] +', 1)');
-        $('.right_banner #color_5').css('background-color', 'rgba('+ medianPalette[4] +', 1)');
-        $('.right_banner #color_6').css('background-color', 'rgba('+ medianPalette[5] +', 1)');
-        $('.right_banner #color_7').css('background-color', 'rgba('+ medianPalette[6] +', 1)');
-        $('.right_banner #color_8').css('background-color', 'rgba('+ medianPalette[7] +', 1)');
-        $('.right_banner #color_9').css('background-color', 'rgba('+ medianPalette[8] +', 1)');
-        $('.right_banner #color_10').css('background-color', 'rgba('+ medianPalette[9] +', 1)');
+        $('.right_banner_user #color_1').css('background-color', 'rgba('+ medianPalette[0] +', 1)');
+        $('.right_banner_user #color_2').css('background-color', 'rgba('+ medianPalette[1] +', 1)');
+        $('.right_banner_user #color_3').css('background-color', 'rgba('+ medianPalette[2] +', 1)');
+        $('.right_banner_user #color_4').css('background-color', 'rgba('+ medianPalette[3] +', 1)');
+        $('.right_banner_user #color_5').css('background-color', 'rgba('+ medianPalette[4] +', 1)');
+        $('.right_banner_user #color_6').css('background-color', 'rgba('+ medianPalette[5] +', 1)');
+        $('.right_banner_user #color_7').css('background-color', 'rgba('+ medianPalette[6] +', 1)');
+        $('.right_banner_user #color_8').css('background-color', 'rgba('+ medianPalette[7] +', 1)');
+        $('.right_banner_user #color_9').css('background-color', 'rgba('+ medianPalette[8] +', 1)');
+        $('.right_banner_user #color_10').css('background-color', 'rgba('+ medianPalette[9] +', 1)');
 
-        $('.imageSection').css('background-color', 'rgba('+ medianPalette[0] +', 1)');
-        $('.ratingSection').css('background-color', 'rgba('+ medianPalette[0] +', 1)');
-        $('#artist_page_name').css('color', 'rgba('+ medianPalette[3] +', 1)')
-        $('#artist_page_twitter_handle').css('color', 'rgba('+ medianPalette[2] +', 1)')
+        $('.imageSectionUser').css('background-color', 'rgba('+ medianPalette[0] +', 1)');
+        $('.ratingSectionUser').css('background-color', 'rgba('+ medianPalette[0] +', 1)');
+        $('#user_page_name').css('color', 'rgba('+ medianPalette[3] +', 1)')
+        $('#user_page_twitter_handle').css('color', 'rgba('+ medianPalette[2] +', 1)')
         $('#user_page_taste').css('color', 'rgba('+ medianPalette[6] +', 1)')
 
 });

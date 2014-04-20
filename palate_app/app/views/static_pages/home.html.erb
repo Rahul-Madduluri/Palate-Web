@@ -20,15 +20,43 @@
       <%= render 'shared/pages' %>
     </section>
   </aside>
+  <div class="home_page">
+    <div class = "span10" id = "feed_main_column">
+      <div class = "feed_new_post">
+        <%= render 'shared/micropost_form' %>
+      </div>
 
-  <div class = "span10" id = "feed_main_column">
-    <div class = "feed_new_post">
-      <%= render 'shared/micropost_form' %>
+
+      <div id="wrapper">
+        <%= render 'shared/feed' %>
+      </div>
     </div>
+  </div>
 
-
-    <div id="wrapper">
-      <%= render 'shared/feed' %>
+  <div class="friends_sidebar">
+    <div id="f_side_title">Tastebuds</div>
+    <hr id="taste_hr">
+    <div class="tastebuds">
+      <div class="tastebud">
+        <div class="tastebud_gravatar"><%= gravatar_for(@users[1]) %></div>
+        <%= @users[1].name %>
+      </div>
+      <div class="tastebud">
+        <div class="tastebud_gravatar"><%= gravatar_for(@users[2]) %></div>
+        <%= @users[2].name %>
+      </div>
+      <div class="tastebud">
+        <div class="tastebud_gravatar"><%= gravatar_for(@users[3]) %></div>
+        <%= @users[3].name %>
+      </div>
+      <div class="tastebud">
+        <div class="tastebud_gravatar"><%= gravatar_for(@users[4]) %></div>
+        <%= @users[4].name %>
+      </div>
+      <div class="tastebud">
+        <div class="tastebud_gravatar"><%= gravatar_for(@users[5]) %></div>
+        <%= @users[5].name %>
+      </div>
     </div>
   </div>
   

@@ -42,6 +42,37 @@
     </div>
 </div>
 
+<div class="friends_sidebar" id="movie_f_sidebar">
+    <div id="f_side_title">Tastebuds</div>
+    <hr id="taste_hr">
+    <div class="tastebuds">
+      <div class="tastebud">
+        <div class="tastebud_gravatar"><%= gravatar_for(@users[1]) %></div>
+        <%= @users[1].name %>
+      </div>
+      <div class="tastebud">
+        <div class="tastebud_gravatar"><%= gravatar_for(@users[2]) %></div>
+        <%= @users[2].name %>
+      </div>
+      <div class="tastebud">
+        <div class="tastebud_gravatar"><%= gravatar_for(@users[3]) %></div>
+        <%= @users[3].name %>
+      </div>
+      <div class="tastebud">
+        <div class="tastebud_gravatar"><%= gravatar_for(@users[4]) %></div>
+        <%= @users[4].name %>
+      </div>
+      <div class="tastebud">
+        <div class="tastebud_gravatar"><%= gravatar_for(@users[5]) %></div>
+        <%= @users[5].name %>
+      </div>
+    </div>
+  </div>
+
+<p id="summary_title">The Pawn. The Con. The Bond.</p>
+<p id="summary">Armed with a license to kill, Secret Agent James Bond sets out on his first mission as 007 and must defeat a weapons dealer in a high stakes game of poker at Casino Royale, but things are not what they seem.</p>
+
+
 <div class = "column_1_movie">
 	<%= render 'profile_left' %>
 </div>
