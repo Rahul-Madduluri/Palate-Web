@@ -64,6 +64,7 @@ class StaticPagesController < ApplicationController
 		current_user.update_attribute(:pace_affinity, pace)
 		current_user.update_attribute(:valence_affinity, valence)
 		current_user.update_attribute(:freshness_affinity, freshness)
+        current_user.save
 
 		respond_to do |format|
 			format.js
