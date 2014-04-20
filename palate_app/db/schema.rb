@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140414091157) do
+ActiveRecord::Schema.define(version: 20140420102247) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20140414091157) do
   end
 
   add_index "songs", ["echonest_id"], name: "index_songs_on_echonest_id"
+  add_index "songs", ["title", "artist_id"], name: "index_songs_on_title_and_artist_id", unique: true
 
   create_table "user_artists", force: true do |t|
     t.integer  "user_id"

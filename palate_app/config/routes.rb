@@ -21,7 +21,7 @@ PalateApp::Application.routes.draw do
   match '/signup', to: 'users#new',    via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout',to: 'sessions#destroy', via: 'delete'
-  match '/update_movie_attr', to: 'static_pages#update_movie_attr', via: 'get'
+  match '/update_movie_attr', to: 'static_pages#update_movie_attr', via: 'post'
   get '/questionnaire' => 'static_pages#firstbite', as: 'firstbite'
 
   

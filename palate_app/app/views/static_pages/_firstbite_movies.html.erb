@@ -3,7 +3,7 @@
 <% Movie.all.each do |movie| %>
 	<div class = "movie_and_title">
 		<div class = "firstbite_movieposter">
-			<%= link_to image_tag(movie.url, class: "movie_image"), {:controller => 'static_pages', :action => 'update_movie_attr', :id => movie.id}, :remote => true %>
+			<%= link_to image_tag(movie.url, class: "movie_image"), {:controller => 'static_pages', :action => 'update_movie_attr', method: :post, :id => movie.id}, :remote => true %>
 		</div>
 		<p class="movie_title"><%= movie.title %></p>
 	</div>
