@@ -46,13 +46,25 @@ textarea {
   margin-left: 220px;
 }
 
-.friends_sidebar {
+#movie_f_sidebar {
   position:fixed;
   background-color: #fefefe;
   height: 600px;
   width: 200px;
   left:1200px;
   margin-top: -300px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cbcbcb;
+}
+
+.friends_sidebar {
+  position:fixed;
+  background-color: #fefefe;
+  height: 600px;
+  width: 200px;
+  left:1200px;
   border-radius: 10px;
   border-style: solid;
   border-width: 1px;
@@ -83,7 +95,7 @@ textarea {
   height: 20px;
 }
 
-hr {
+#taste_hr {
   border: 0;
   height: 1px;
   margin-left: 50px;
