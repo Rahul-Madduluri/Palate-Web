@@ -11,5 +11,6 @@ class Song < ActiveRecord::Base
 	validates :artist_id, presence: true
 	validates :echonest_id, presence: true
 	validates :title, presence: true
+	validates :spotify_uri, presence: true
 
 end

@@ -17,17 +17,21 @@ class StaticPagesController < ApplicationController
                     artist = Artist.find_by(echonest_id: song.artist_id)
                     unless (song.tracks[0].nil?)
                         spotify_uri = song.tracks[0].foreign_id.sub!('spotify-WW','spotify')
-                        Song.create!(title: song.title, echonest_id: song.id, artist: artist, spotify_uri: spotify_uri)
-                    else
-                        Song.create!(title: song.title, echonest_id: song.id, artist: artist)
+                        if (spotify_uri != nil && Song.where(title: song.title, artist: artist).blank?)
+                            Song.create!(title: song.title, echonest_id: song.id, artist: artist, spotify_uri: spotify_uri)
+                            new_song = Song.find_by(echonest_id: song.id)
+                            post_content = new_song.title + "\n" + new_song.artist.name + " " +new_song.artist.image_url
+
+                            current_user.palate_recommendations.create!(content: post_content, media:new_song)
+                        end
+                    #else
+                        #Song.create!(title: song.title, echonest_id: song.id, artist: artist)
+                        
+
                     end
 
                 end
 
-                new_song = Song.find_by(echonest_id: song.id)
-      		    post_content = new_song.title + "\n" + new_song.artist.name + " " +new_song.artist.image_url
-
-	            current_user.palate_recommendations.create!(content: post_content, media:new_song)
 	        end
       		@micropost  = current_user.microposts.build
      		@feed_items = current_user.feed.take(15)
