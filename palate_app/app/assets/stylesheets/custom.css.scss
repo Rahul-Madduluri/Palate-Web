@@ -626,6 +626,10 @@ aside {
   font-size: 16px;
 }
 
+#feed_content {
+  font-family: "Helvetica Neue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
 #feed_left_column {
   margin-right: 0px;
   position: fixed;
@@ -643,10 +647,10 @@ aside {
 
 }
 
-
-
-#username {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+#username a {
+  font: 16px "Raleway-Medium", "Helvetica Neue", "Helvetica Neue Light", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #333333;
+  text-decoration: none;
 
 }
 
