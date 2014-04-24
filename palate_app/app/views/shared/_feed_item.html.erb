@@ -13,8 +13,13 @@
 		<br>
 	<% else %>
 
-		<span id="media_title"><%= url_link(feed_item.media.title) %></span>
-		
+		<span id="media_title"><%= feed_item.media.title %></span>
+		<% if feed_item.media.is_a? Song %>
+			<br>
+			<span class="artist_title"><%= link_to feed_item.media.artist.name, feed_item.media.artist %></span>
+		<% end %>
+
+
 		<div class = "ratings">
 			<div class = "official_rating">
 				<% unless (feed_item.media.nil? || feed_item.media.official_rating.blank?) %>
@@ -36,7 +41,7 @@
 
 		</div>
 		<br>
-		<% unless (feed_item.media.nil? || feed_item.media.spotify_uri.blank?) %>
+		<% unless (feed_item.media.nil? || (feed_item.media.is_a? Movie) || feed_item.media.spotify_uri.blank?) %>
 			<div class = "spotify_play">
 				<iframe src="https://embed.spotify.com/?uri=<%= feed_item.media.spotify_uri %>" width="250" height="80" frameborder="0" allowtransparency="true"></iframe>
 			</div>
