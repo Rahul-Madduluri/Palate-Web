@@ -1,0 +1,18 @@
+
+<% Movie.all.each do |movie| %>
+	<div class = "movie_and_title">
+		<div class = "firstbite_movieposter">
+			<%= link_to image_tag(movie.url, class: "movie_image"), {:controller => 'static_pages', :action => 'update_movie_attr', :id => movie.id}, method: :patch, :remote => true %>
+		</div>
+		<p class="movie_title"><%= movie.title %></p>
+	</div>
+<% end %>
+
+<script type = "text/javascript">
+
+	$('.firstbite_movieposter').click(function() {
+		$(this).fadeTo(1000,.4);
+	})
+
+</script>
+
