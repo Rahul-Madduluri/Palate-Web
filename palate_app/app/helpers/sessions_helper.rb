@@ -47,5 +47,11 @@ module SessionsHelper
         session[:return_to] = request.url if request.get?
     end
 
+    protected
+    
+        def auth_hash
+            request.env['omniauth.auth']
+        end
+
 
 end

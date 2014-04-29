@@ -1,7 +1,7 @@
 PalateApp::Application.routes.draw do
   resources :users do
     member do
-      get :following, :followers
+      get :following, :followers, :omniauth
     end
   end
 
@@ -21,6 +21,11 @@ PalateApp::Application.routes.draw do
   match '/signup', to: 'users#new',    via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout',to: 'sessions#destroy', via: 'delete'
+
+  #omniauth
+  get 'auth/:provider/callback' => 'users#omniauth'
+  #match 'auth/:provider/callback', to: 'users#omniauth', via: 'post'
+  match 'auth/failure', to: redirect('/'), via: 'get'
 
   #static pages
   patch '/update_movie_attr' => 'static_pages#update_movie_attr'

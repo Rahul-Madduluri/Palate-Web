@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140420102247) do
+ActiveRecord::Schema.define(version: 20140429082428) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -132,6 +132,10 @@ ActiveRecord::Schema.define(version: 20140420102247) do
     t.decimal  "valence_affinity"
     t.decimal  "freshness_affinity"
     t.decimal  "critics_affinity"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -35,6 +35,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def omniauth
+    @user = User.from_omniauth(auth_hash)
+    redirect_to @user
+  end
+
   def edit
   end
 

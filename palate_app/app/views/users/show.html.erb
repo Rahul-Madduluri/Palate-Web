@@ -56,22 +56,21 @@
 <div class = "column_2_movie">
 	<%= render 'profile_right' %>
 </div>
-<div class="button-holder"><%= link_to "Profile Me!", firstbite_url , class: "btn btn-large btn-primary" %></div>
 
-	<div>
-		<%= @adventurousness %>
-		<%= @user.adventurousness_affinity %>
-		<%= @instinctiveness %>
-		<%= @user.instinctiveness_affinity %>
-		<%= @pace %>
-		<%= @user.pace_affinity %>
-		<%= @valence %>
-		<%= @user.valence_affinity %>
-	</div>
+<div>
+	<%= @adventurousness %>
+	<%= @user.adventurousness_affinity %>
+	<%= @instinctiveness %>
+	<%= @user.instinctiveness_affinity %>
+	<%= @pace %>
+	<%= @user.pace_affinity %>
+	<%= @valence %>
+	<%= @user.valence_affinity %>
+</div>
 
-	<div class="span8">
-		<%= render 'follow_form' if signed_in? %>
-	</div>
+<div class="span8">
+	<%= render 'follow_form' if signed_in? %>
+</div>
 
 
 <script>

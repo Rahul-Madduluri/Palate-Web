@@ -69,11 +69,17 @@
     <br><br>
     <p id="coming_soon">COMING SOON</p>
     <br><br>
-  	<%= link_to "Sign up now!", signup_path , class: "btn btn-large btn-primary" %>
+  	<%= link_to image_tag('email_signup.png'), signup_path %>
+    <span id="fb_sign_in"><img src="assets/fb_login.png"></span>
 	</div>
   <div class = "signup_animation">
     <img src="assets/signup_sketches.jpg">
   </div>
 <% end %>
+
+<script>
+  $('#fb_sign_in').mousedown( function() {
+  });
+</script>
 
 
