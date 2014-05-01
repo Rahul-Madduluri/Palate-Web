@@ -569,13 +569,17 @@ aside {
   column-break-inside: avoid;
   background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
   opacity: 1;
-  width: 240px;
+  width: 230px;
   padding: 5px 5px 5px 5px;
   
   -webkit-transition: all .2s ease;
   -moz-transition: all .2s ease;
   -o-transition: all .2s ease;
   transition: all .2s ease;
+}
+
+.pin:hover {
+  border-color:#94D562;
 }
 
 .pin_new_post {
@@ -1510,3 +1514,6 @@ aside {
   float:right;
   display: inline-block;
 }
+
+
+
