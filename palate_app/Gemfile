@@ -12,6 +12,9 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'omniauth-facebook', '1.4.0'
 gem 'koala'
 
+#twitter
+gem 'omniauth-twitter'
+
 
 # echonest
 gem 'echowrap'

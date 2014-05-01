@@ -23,7 +23,7 @@ PalateApp::Application.routes.draw do
   match '/signout',to: 'sessions#destroy', via: 'delete'
 
   #omniauth
-  get 'auth/:provider/callback' => 'users#omniauth'
+  get 'auth/:provider/callback' => 'users#omniauth', as: 'omniauth'
   #match 'auth/:provider/callback', to: 'users#omniauth', via: 'post'
   match 'auth/failure', to: redirect('/'), via: 'get'
 

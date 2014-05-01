@@ -37,6 +37,7 @@ class UsersController < ApplicationController
 
   def omniauth
     @user = User.from_omniauth(auth_hash)
+    sign_in(@user)
     redirect_to @user
   end
 

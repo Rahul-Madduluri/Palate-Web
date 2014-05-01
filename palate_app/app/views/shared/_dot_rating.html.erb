@@ -9,6 +9,7 @@
 		<span class = "rating_dot red_dot">
 			<%= render partial: 'shared/dot_form', locals: { media: media, rating: 0.2, dot_png: 'red_dot' } %>
 		</span>
+
 	<% end %>
 
 
@@ -65,17 +66,17 @@
 
 	<% if (current_user.rated?(media) ) %>
 		<% if (current_user.rating_for(media) == 1) %>
-			<span class = "rating_dot purple_dot rated">
-				<%= render partial: 'shared/dot_form', locals: { media: media, rating: 1.0, dot_png: 'purple_dot' } %>
+			<span class = "rating_dot orange_dot rated">
+				<%= render partial: 'shared/dot_form', locals: { media: media, rating: 1.0, dot_png: 'orange_dot' } %>
 			</span>
 		<% else %>
-			<span class = "rating_dot purple_dot hidden_dot">
-				<%= render partial: 'shared/dot_form', locals: { media: media, rating: 1.0, dot_png: 'purple_dot' } %>
+			<span class = "rating_dot orange_dot hidden_dot">
+				<%= render partial: 'shared/dot_form', locals: { media: media, rating: 1.0, dot_png: 'orange_dot' } %>
 			</span>
 		<% end %>
 	<% else %>
-		<span class = "rating_dot purple_dot">
-			<%= render partial: 'shared/dot_form', locals: { media: media, rating: 1.0, dot_png: 'purple_dot' } %>
+		<span class = "rating_dot orange_dot">
+			<%= render partial: 'shared/dot_form', locals: { media: media, rating: 1.0, dot_png: 'orange_dot' } %>
 		</span>
 	<% end %>
 
@@ -124,7 +125,7 @@
 		$(this).removeClass('hidden_dot');
 		$(this).siblings('.green_dot').addClass('hidden_dot');
 		$(this).siblings(".blue_dot").addClass('hidden_dot');
-		$(this).siblings('.purple_dot').addClass('hidden_dot');
+		$(this).siblings('.orange_dot').addClass('hidden_dot');
 	},
 	function() {
 		if ( $(this).siblings().hasClass('rated') || $(this).hasClass('rated') )
@@ -157,7 +158,7 @@
 		$(this).removeClass('hidden_dot');
 		$(this).siblings('.yellow_dot').removeClass('hidden_dot');
 		$(this).siblings('.blue_dot').addClass('hidden_dot');
-		$(this).siblings('.purple_dot').addClass('hidden_dot');
+		$(this).siblings('.orange_dot').addClass('hidden_dot');
 	},
 	function() {
 		if ( $(this).siblings().hasClass('rated') || $(this).hasClass('rated') )
@@ -191,7 +192,7 @@
 		$(this).removeClass('hidden_dot');
 		$(this).siblings('.yellow_dot').removeClass('hidden_dot');
 		$(this).siblings('.green_dot').removeClass('hidden_dot');
-		$(this).siblings('.purple_dot').addClass('hidden_dot');
+		$(this).siblings('.orange_dot').addClass('hidden_dot');
 	},
 	function () {
 		if ( $(this).siblings().hasClass('rated') || $(this).hasClass('rated') )
@@ -219,7 +220,7 @@
 		}
 	});
 
-	$('.purple_dot').hover( function() {
+	$('.orange_dot').hover( function() {
 		$(this).removeClass('hidden_dot');
 		$(this).siblings().removeClass('hidden_dot');
 	},

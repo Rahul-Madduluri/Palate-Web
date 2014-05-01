@@ -154,7 +154,7 @@ class User < ActiveRecord::Base
         user.oauth_token = auth.credentials.token
         user.oauth_expires_at = Time.at(auth.credentials.expires_at) unless auth.credentials.expires_at.nil?
         user.email = auth.info.email
-        user.password = user.password_confirmation = SecureRandom.urlsafe_base64(n=6)
+        user.password = user.password_confirmation ||= SecureRandom.urlsafe_base64(n=6)
         user.save!
       end
     end

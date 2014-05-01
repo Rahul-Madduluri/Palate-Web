@@ -51,6 +51,11 @@ textarea {
   display: inline-block;
 }
 
+#email_signin input{
+  border: none;
+  outline: none;
+}
+
 #movie_f_sidebar {
   position:fixed;
   background-color: #fefefe;
@@ -678,6 +683,8 @@ aside {
 }
 
 /* ratings */
+.ratings {
+}
 .rating_dot
 {
   height: 8px;
@@ -688,8 +695,8 @@ aside {
 
 .rating_dot input
 {
-  height: 8px;
-  width: 8px;
+  height: 10px;
+  width: 10px;
   float: left;
   margin: 1px 1px 1px 1px;
   border: none;
@@ -712,7 +719,7 @@ aside {
 .blue_dot {
 }
 
-.purple_dot {
+.orange_dot {
 }
 
 .hidden_dot {
