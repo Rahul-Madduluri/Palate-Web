@@ -15,10 +15,14 @@
 		<br>
 	<% else %>
 
-		<span id="media_title"><%= feed_item.media.title %></span>
 		<% if feed_item.media.is_a? Song %>
+			<span id="media_title"><%= feed_item.media.title %></span>
 			<br>
 			<span class="artist_title"><%= link_to feed_item.media.artist.name, feed_item.media.artist %></span>
+		<% elsif feed_item.media.is_a? Movie %>
+			<span id="media_title"><%= link_to feed_item.media.title, feed_item.media %></span>
+			<br>
+			<span class="artist_title"><%= feed_item.media.year %></span>
 		<% end %>
 
 
@@ -61,7 +65,11 @@
 		<% if feed_item.is_a? Micropost %>
 			<%= url_link(feed_item.content) %>
 		<% else %>
-			<%= url_link(Song.find_by(echonest_id: feed_item.media.echonest_id).artist.image_url) %>
+			<% if feed_item.media.is_a? Song %>
+				<%= image_tag(Song.find_by(echonest_id: feed_item.media.echonest_id).artist.image_url) %>
+			<% elsif feed_item.media.is_a? Movie %>
+				<%= image_tag(Movie.find_by(id: feed_item.media.id).url) %>
+			<% end %>
 		<% end %>
 	</div>
 

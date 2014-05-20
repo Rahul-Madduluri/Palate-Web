@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429082428) do
+ActiveRecord::Schema.define(version: 20140505093153) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20140429082428) do
     t.string   "movie_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "personal_rating"
   end
 
   add_index "user_movies", ["movie_id"], name: "index_user_movies_on_movie_id"

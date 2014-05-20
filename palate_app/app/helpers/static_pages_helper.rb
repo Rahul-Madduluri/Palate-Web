@@ -27,4 +27,6 @@ module StaticPagesHelper
 	end
 
 
+
+
 end

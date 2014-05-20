@@ -10,7 +10,7 @@ class PalateRecommendation < ActiveRecord::Base
 
 	def self.for_user(user)
 	    where("user_id = :user_id",
-	          user_id: user.id)
+	          user_id: user.id).take(10).shuffle!
   	end
 
 end

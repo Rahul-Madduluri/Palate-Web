@@ -1,0 +1,66 @@
+<div class="friends_sidebar">
+  <div id="f_side_title">Groups</div>
+  <hr>
+  <div class="groups">
+    <div id="select_bar2"></div>
+    <div id="group1">Dynamic Daily Group</div><br>
+    <div id="group2">Niggas</div><br>
+    <div id="group3">Basik Bitches</div><br>
+    <div id="group4">Hoes</div><br>
+    <div id="group5">Bros</div>
+  </div>
+  <div id="f_side_title">Tastebuds</div>
+  <hr>
+  <div class="tastebuds">
+    <div class="tastebud">
+      <div class="feed_gravatar"><%= gravatar_for(@users[1]) %></div>
+      <%= @users[1].name %>
+    </div>
+    <div class="tastebud">
+      <div class="feed_gravatar"><%= gravatar_for(@users[2]) %></div>
+      <%= @users[2].name %>
+    </div>
+    <div class="tastebud">
+      <div class="feed_gravatar"><%= gravatar_for(@users[3]) %></div>
+      <%= @users[3].name %>
+    </div>
+    <div class="tastebud">
+      <div class="feed_gravatar"><%= gravatar_for(@users[4]) %></div>
+      <%= @users[4].name %>
+    </div>
+    <div class="tastebud">
+      <div class="feed_gravatar"><%= gravatar_for(@users[5]) %></div>
+      <%= @users[5].name %>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $('#group1').click( function() {
+    $('#select_bar2').animate( {
+      'bottom': "0px"
+    });
+  });
+  $('#group2').click( function() {
+    $('#select_bar2').animate( {
+      'bottom': "-40px"
+    });
+  });
+  $('#group3').click( function() {
+    $('#select_bar2').animate( {
+      'bottom': "-80px"
+    });
+  });
+  $('#group4').click( function() {
+    $('#select_bar2').animate( {
+      'bottom': "-120px"
+    });
+  });
+  $('#group5').click( function() {
+    $('#select_bar2').animate( {
+      'bottom': "-160px"
+    });
+  });
+</script>
+

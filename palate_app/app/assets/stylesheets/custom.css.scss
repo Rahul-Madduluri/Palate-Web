@@ -80,9 +80,11 @@ textarea {
 #f_side_title {
   width:80px;
   margin-left: 60px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
+  font-family: "HelveticaNeue", "Helvetica Neue", "Helvetica Neue Light", "Helvetica", Arial;
   font-size: 15px;
   margin-top: 30px;
+  color: #666666;
+
 }
 
 .tastebuds {
@@ -97,10 +99,15 @@ textarea {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
 }
 
-#group {
+.groups {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
   margin-left: 20px;
+  color: #666666;
 
+
+}
+
+#group1{
 }
 
 .tastebud_gravatar {
@@ -752,6 +759,10 @@ aside {
   margin-left: 10px;
 }
 
+#newsfeed_page {
+
+}
+
 #movies_page {
 
 }
@@ -778,6 +789,15 @@ aside {
 
 }
 
+#select_bar2 {
+  position: relative;
+  float: left;
+  background-color : #0099FF;
+  height: 20px;
+  width: 4px;
+  left: -10px;
+
+}
 
 
 
@@ -867,6 +887,20 @@ aside {
   font: bold 20px "Century Schoolbook", Georgia, Times, serif;
   */
   font: 20px "Raleway-Light","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
+  color: #333333;
+}
+
+#media_title a{
+  /*
+  font: bold 20px "Century Schoolbook", Georgia, Times, serif;
+  */
+  font: 20px "Raleway-Light","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
+  color: #333333;
+  text-decoration: none;
+}
+
+.artist_title {
+  font: 14px "Raleway-ExtraLight","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
   color: #333333;
 }
 
